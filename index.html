@@ -38,8 +38,8 @@
         }
 
         .button {
-            padding: 15px 30px;
-            font-size: 18px;
+            padding: 10px 20px; /* Ridotta dimensione padding */
+            font-size: 16px; /* Ridotta dimensione font */
             background-color: #FFD700;
             color: #000;
             border: none;
@@ -77,6 +77,11 @@
         .evolution-link:hover {
             text-decoration: underline; /* Sottolineato al passaggio del mouse */
         }
+
+        .horizontal-buttons {
+            display: flex;
+            gap: 10px; /* Spazio tra i pulsanti */
+        }
     </style>
 </head>
 <body>
@@ -84,12 +89,14 @@
     <p>SCOPRI I NOSTRI PRODOTTI</p>
 
     <div class="button-container">
-        <form action="https://www.ebay.it/itm/305625815285?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=6T8OFL8sTNG&sssrc=2051273&ssuid=6T8OFL8sTNG&var=&widget_ver=artemis&media=COPY" method="get">
-            <input type="submit" value="SPOILER per FIAT" class="button">
-        </form>
-        <form action="https://www.ebay.it/itm/305623143585?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=6T8OFL8sTNG&sssrc=2051273&ssuid=6T8OFL8sTNG&var=&widget_ver=artemis&media=COPYmkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=6T8OFL8sTNG&sssrc=4429486&ssuid=6T8OFL8sTNG&var=&widget_ver=artemis&media=COPY" method="get">
-            <input type="submit" value="SPOILER per BMW" class="button">
-        </form>
+        <div class="horizontal-buttons">
+            <form action="https://www.ebay.it/itm/305625815285?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=6T8OFL8sTNG&sssrc=2051273&ssuid=6T8OFL8sTNG&var=&widget_ver=artemis&media=COPY" method="get">
+                <input type="submit" value="SPOILER per FIAT" class="button">
+            </form>
+            <form action="https://www.ebay.it/itm/305623143585?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=6T8OFL8sTNG&sssrc=2051273&ssuid=6T8OFL8sTNG&var=&widget_ver=artemis&media=COPYmkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=6T8OFL8sTNG&sssrc=4429486&ssuid=6T8OFL8sTNG&var=&widget_ver=artemis&media=COPY" method="get">
+                <input type="submit" value="SPOILER per BMW" class="button">
+            </form>
+        </div>
         <form action="https://www.ebay.it/itm/305578601805?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=6T8OFL8sTNG&sssrc=4429486&ssuid=6T8OFL8sTNG&var=&widget_ver=artemis&media=COPY" method="get">
             <input type="submit" value="Stampante per Smartphone" class="button">
         </form>
