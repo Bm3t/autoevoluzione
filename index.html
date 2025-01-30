@@ -127,7 +127,7 @@
             .product-gallery {
                 grid-template-columns: 1fr;
             }
-
+            
             .cta-button:after {
                 display: none;
             }
@@ -170,7 +170,6 @@
     </div>
 
     <form action="[URL_EBAY]">
-    <form action="https://www.ebay.it/itm/356379922337?">
         <button class="cta-button">🛒 ACQUISTA ORA SU EBAY</button>
     </form>
 
@@ -178,7 +177,7 @@
         // Animazione stock dinamico
         let currentStock = 4;
         const stockElement = document.querySelector('.stock-wrapper span:first-child');
-
+        
         setInterval(() => {
             currentStock = Math.max(2, currentStock - (Math.random() < 0.3 ? 1 : 0));
             stockElement.textContent = `Disponibili: ${currentStock}`;
