@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spoiler Premium | EvolutionAuto</title>
+    <title>Aerokit Premium | EvolutionAuto</title>
     <style>
         :root {
             --primary: #FFD700;
@@ -20,40 +20,24 @@
             text-align: center;
         }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            background: rgba(255,215,0,0.1);
+            color: var(--primary);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            margin: 2rem auto;
+            display: inline-block;
+            border: 1px solid var(--primary);
+        }
+
+        .product-header {
             margin-bottom: 2rem;
-        }
-
-        .logo {
-            width: 150px;
-            height: auto;
-        }
-
-        .trust-badges {
-            display: flex;
-            gap: 1rem;
-            opacity: 0.8;
-        }
-
-        .product-gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .gallery-item {
-            width: 100%;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.03);
         }
 
         .stock-wrapper {
@@ -61,7 +45,6 @@
             padding: 1.5rem;
             background: #1A1A1A;
             border-radius: 12px;
-            position: relative;
         }
 
         .progress-bar {
@@ -71,28 +54,22 @@
             margin: 1rem auto;
             overflow: hidden;
             max-width: 400px;
-            position: relative;
         }
 
         .progress-fill {
             height: 100%;
             background: #4CAF50;
             width: 4%;
-            position: absolute;
-            left: 0;
             transition: width 0.5s ease;
         }
 
-        .ebay-guarantee {
-            background: #F5F5F5;
-            color: #333;
-            padding: 1rem;
-            border-radius: 8px;
-            margin: 2rem 0;
+        .stock-text {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #888;
+            max-width: 400px;
+            margin: 0.5rem auto;
         }
 
         .cta-button {
@@ -105,82 +82,111 @@
             font-size: 1.2rem;
             cursor: pointer;
             transition: transform 0.3s ease;
+            position: relative;
             margin: 2rem 0;
             display: inline-flex;
             align-items: center;
             gap: 1rem;
-            position: relative;
         }
 
-        .cta-button:after {
+        .cta-button:before {
             content: '🚚 Spedizione 24h';
             position: absolute;
-            right: -140px;
             background: #388E3C;
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.3rem 1rem;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            right: -140px;
+            white-space: nowrap;
         }
 
-        @media (max-width: 768px) {
-            .product-gallery {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-button:after {
-                display: none;
-            }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+
+        .feature-item {
+            padding: 1rem;
+            background: #1F1F1F;
+            border-radius: 8px;
+        }
+
+        .trust-section {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            opacity: 0.8;
+        }
+
+        .review-badge {
+            background: #2C2C2C;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="logo.jpg" alt="EvolutionAuto" class="logo">
-        <div class="trust-badges">
-            <span>🔒 SSL Sicuro</span>
-            <span>⭐ 4.9/5</span>
-            <span>📦 Reso Gratis</span>
+    <div class="container">
+        <div class="product-header">
+            <div class="badge">✅ Progettazione Europea Certificata</div>
+            <h1>Spoiler Aerodinamico EVO-X9</h1>
+        </div>
+
+        <div class="stock-wrapper">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="stock-text">
+                <span>Disponibili: 4</span>
+                <span>Venduti: 96</span>
+            </div>
+            <p>Ultimi pezzi disponibili - Nuova fornitura: 3-4 settimane</p>
+        </div>
+
+        <button class="cta-button">
+            🛒 Acquista Ora 
+        </button>
+
+        <div class="features-grid">
+            <div class="feature-item">
+                🏭 Materiali Compositi
+                <div class="feature-desc">Leghe ad alta resistenza</div>
+            </div>
+            <div class="feature-item">
+                ⏱️ Installazione 15 min
+                <div class="feature-desc">Kit universale pre-assemblato</div>
+            </div>
+            <div class="feature-item">
+                📦 Consegna Assicurata
+                <div class="feature-desc">Tracking in tempo reale</div>
+            </div>
+        </div>
+
+        <div class="review-badge">
+            ⭐ 4.9/5 su 1.234 clienti soddisfatti
+        </div>
+
+        <div class="trust-section">
+            🔒 Pagamenti Sicuri | 📞 Supporto Tecnico | 🔄 30 Giorni Reso
         </div>
     </div>
-
-    <div class="stock-wrapper">
-        <h2>SPOILER EVO-X9</h2>
-        <div class="progress-bar">
-            <div class="progress-fill"></div>
-        </div>
-        <div style="display: flex; justify-content: space-between; max-width: 400px; margin: 0 auto">
-            <span>Disponibili: 4</span>
-            <span>Venduti: 96</span>
-        </div>
-    </div>
-
-    <div class="product-gallery">
-        <img src="spoiler1.jpg" alt="Spoiler su Audi" class="gallery-item">
-        <img src="spoiler2.jpg" alt="Spoiler su BMW" class="gallery-item">
-        <img src="spoiler3.jpg" alt="Spoiler su Mercedes" class="gallery-item">
-    </div>
-
-    <div class="ebay-guarantee">
-        <img src="ebay-logo.png" alt="eBay" style="height: 30px">
-        <div>
-            <strong>Acquisto Sicuro tramite eBay</strong><br>
-            <small>Garanzia Acquirente • Pagamento Protetto • Assistenza Completa</small>
-        </div>
-    </div>
-
-    <form action="[URL_EBAY]">
-        <button class="cta-button">🛒 ACQUISTA ORA SU EBAY</button>
-    </form>
 
     <script>
-        // Animazione stock dinamico
-        let currentStock = 4;
-        const stockElement = document.querySelector('.stock-wrapper span:first-child');
+        // Simulazione progress bar
+        document.getElementById('progressFill').style.width = '4%';
         
+        // Animazione stock (simulazione live)
+        let baseStock = 4;
         setInterval(() => {
-            currentStock = Math.max(2, currentStock - (Math.random() < 0.3 ? 1 : 0));
-            stockElement.textContent = `Disponibili: ${currentStock}`;
+            const variation = Math.random() < 0.5 ? -1 : 0;
+            const displayStock = Math.max(2, baseStock + variation);
+            document.querySelector('.stock-text span:first-child').innerHTML = 
+              `Disponibili: ${displayStock}`;
         }, 15000);
     </script>
 </body>
