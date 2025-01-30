@@ -3,157 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aerodinamica Premium | EvolutionAuto</title>
+    <title>Aerokit Premium | EvolutionAuto</title>
     <style>
         :root {
-            --gold: #FFD700;
-            --dark-bg: #0d0d0d;
+            --primary: #FFD700;
+            --dark: #121212;
+            --light: #FFFFFF;
         }
 
         body {
-            background: var(--dark-bg) url('pattern.png'); /* Aggiungi texture sottile */
+            background: var(--dark);
+            color: var(--light);
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 2rem;
             text-align: center;
         }
 
-        .header {
-            margin-bottom: 2rem;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .badge {
             background: rgba(255,215,0,0.1);
-            color: var(--gold);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            color: var(--primary);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
             font-size: 0.9rem;
-            margin: 1rem auto;
-            width: fit-content;
-            border: 1px solid var(--gold);
-        }
-
-        .product-card {
-            background: linear-gradient(45deg, #1a1a1a, #262626);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            max-width: 600px;
             margin: 2rem auto;
-            position: relative;
+            display: inline-block;
+            border: 1px solid var(--primary);
         }
 
-        .stock-counter {
-            background: #e60000;
-            color: white;
-            padding: 0.5rem;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            animation: pulse 2s infinite;
-            margin: 1rem 0;
+        .product-header {
+            margin-bottom: 2rem;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .guarantee-bar {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
+        .stock-wrapper {
             margin: 2rem 0;
-            color: #ccc;
+            padding: 1.5rem;
+            background: #1A1A1A;
+            border-radius: 12px;
         }
 
-        .guarantee-item {
+        .progress-bar {
+            height: 12px;
+            background: #D32F2F;
+            border-radius: 6px;
+            margin: 1rem auto;
+            overflow: hidden;
+            max-width: 400px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #4CAF50;
+            width: 4%;
+            transition: width 0.5s ease;
+        }
+
+        .stock-text {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #888;
+            max-width: 400px;
+            margin: 0.5rem auto;
         }
 
         .cta-button {
-            background: linear-gradient(45deg, #FFD700, #FFAA00);
+            background: linear-gradient(45deg, #FFD700, #FFC107);
             color: #000;
-            padding: 1.2rem 2.5rem;
+            padding: 1.5rem 3rem;
             border: none;
             border-radius: 50px;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             cursor: pointer;
             transition: transform 0.3s ease;
             position: relative;
-            overflow: hidden;
+            margin: 2rem 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
         }
 
-        .cta-button:after {
-            content: '🚚 Spedizione immediata!';
+        .cta-button:before {
+            content: '🚚 Spedizione 24h';
             position: absolute;
-            background: #00cc66;
+            background: #388E3C;
             color: white;
             padding: 0.3rem 1rem;
             border-radius: 20px;
             font-size: 0.8rem;
-            right: -70px;
-            top: 50%;
-            transform: translateY(-50%) rotate(25deg);
-            width: max-content;
+            right: -140px;
+            white-space: nowrap;
         }
 
-        .cta-button:hover {
-            transform: scale(1.05);
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 3rem 0;
         }
 
-        .trust-badges {
+        .feature-item {
+            padding: 1rem;
+            background: #1F1F1F;
+            border-radius: 8px;
+        }
+
+        .trust-section {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 2rem;
             margin: 2rem 0;
             opacity: 0.8;
+        }
+
+        .review-badge {
+            background: #2C2C2C;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="badge">🏁 Precisione Germanica</div>
-        <h1>Ultimo Stock Spoiler Aerodinamico 2024</h1>
-    </div>
-
-    <div class="product-card">
-        <div class="stock-counter" id="stockCounter">🚨 Solo 4 rimasti su 100!</div>
-        
-        <div class="guarantee-bar">
-            <div class="guarantee-item">🛡️ 5 anni garanzia</div>
-            <div class="guarantee-item">✈️ Spedizione 24/48h</div>
-            <div class="guarantee-item">🔧 Adattamento universale</div>
+    <div class="container">
+        <div class="product-header">
+            <div class="badge">✅ Progettazione Europea Certificata</div>
+            <h1>Spoiler Aerodinamico EVO-X9</h1>
         </div>
 
-        <form action="[URL_EBAY]">
-            <button class="cta-button">ACQUISTA ORA - RISERVARE COPIA</button>
-        </form>
-    </div>
+        <div class="stock-wrapper">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="stock-text">
+                <span>Disponibili: 4</span>
+                <span>Venduti: 96</span>
+            </div>
+            <p>Ultimi pezzi disponibili - Nuova fornitura: 3-4 settimane</p>
+        </div>
 
-    <div class="trust-badges">
-        <span>🔒 Pagamento sicuro</span>
-        <span>⭐ 4.9/5 (1,234 recensioni)</span>
-        <span>📦 Reso gratuito</span>
+        <button class="cta-button">
+            🛒 Acquista Ora 
+        </button>
+
+        <div class="features-grid">
+            <div class="feature-item">
+                🏭 Materiali Compositi
+                <div class="feature-desc">Leghe ad alta resistenza</div>
+            </div>
+            <div class="feature-item">
+                ⏱️ Installazione 15 min
+                <div class="feature-desc">Kit universale pre-assemblato</div>
+            </div>
+            <div class="feature-item">
+                📦 Consegna Assicurata
+                <div class="feature-desc">Tracking in tempo reale</div>
+            </div>
+        </div>
+
+        <div class="review-badge">
+            ⭐ 4.9/5 su 1.234 clienti soddisfatti
+        </div>
+
+        <div class="trust-section">
+            🔒 Pagamenti Sicuri | 📞 Supporto Tecnico | 🔄 30 Giorni Reso
+        </div>
     </div>
 
     <script>
-        // Animazione contatore stock
-        function updateStock() {
-            const counter = document.getElementById('stockCounter');
-            let current = 100;
-            setInterval(() => {
-                if(current > 4) {
-                    current--;
-                    counter.textContent = `🚨 Solo ${Math.max(4, current)} rimasti su 100!`;
-                    counter.style.background = current <= 10 ? '#e60000' : '#FFD700';
-                }
-            }, 30000); // Aggiorna ogni 30 secondi
-        }
-        updateStock();
+        // Simulazione progress bar
+        document.getElementById('progressFill').style.width = '4%';
+        
+        // Animazione stock (simulazione live)
+        let baseStock = 4;
+        setInterval(() => {
+            const variation = Math.random() < 0.5 ? -1 : 0;
+            const displayStock = Math.max(2, baseStock + variation);
+            document.querySelector('.stock-text span:first-child').innerHTML = 
+              `Disponibili: ${displayStock}`;
+        }, 15000);
     </script>
 </body>
 </html>
