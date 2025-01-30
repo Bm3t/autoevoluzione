@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acquista lo spoiler EVO-X9 premium per la tua auto. Design certificato, materiali di alta qualità e installazione immediata.">
     <title>Aerokit Premium | EvolutionAuto</title>
     <style>
         :root {
             --primary: #FFD700;
             --dark: #121212;
             --light: #FFFFFF;
+            --secondary-bg: #1A1A1A;
+            --transition: all 0.3s ease;
         }
 
         body {
@@ -16,13 +19,21 @@
             color: var(--light);
             font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 2rem;
+            padding: 1rem;
             text-align: center;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
+        }
+
+        .logo {
+            max-width: 250px;
+            margin: 1rem auto 3rem;
+            display: block;
+            transition: var(--transition);
         }
 
         .badge {
@@ -34,17 +45,27 @@
             margin: 2rem auto;
             display: inline-block;
             border: 1px solid var(--primary);
+            backdrop-filter: blur(5px);
         }
 
         .product-header {
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-header h1 {
+            font-size: 2.5rem;
+            margin: 1rem 0;
+            background: linear-gradient(45deg, #FFD700, #FFFFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .stock-wrapper {
             margin: 2rem 0;
             padding: 1.5rem;
-            background: #1A1A1A;
+            background: var(--secondary-bg);
             border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
         .progress-bar {
@@ -53,14 +74,14 @@
             border-radius: 6px;
             margin: 1rem auto;
             overflow: hidden;
-            max-width: 400px;
+            max-width: 500px;
         }
 
         .progress-fill {
             height: 100%;
-            background: #4CAF50;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
             width: 4%;
-            transition: width 0.5s ease;
+            transition: var(--transition);
         }
 
         .stock-text {
@@ -68,7 +89,7 @@
             justify-content: space-between;
             font-size: 0.9rem;
             color: #888;
-            max-width: 400px;
+            max-width: 500px;
             margin: 0.5rem auto;
         }
 
@@ -81,16 +102,22 @@
             font-weight: bold;
             font-size: 1.2rem;
             cursor: pointer;
-            transition: transform 0.3s ease;
-            position: relative;
+            transition: var(--transition);
             margin: 2rem 0;
             display: inline-flex;
             align-items: center;
             gap: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255,215,0,0.3);
         }
 
         .cta-button:before {
-            content: '🚚 Spedizione 24h';
+            content: '🚚 Spedizione Veloce';
             position: absolute;
             background: #388E3C;
             color: white;
@@ -103,39 +130,72 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
             margin: 3rem 0;
         }
 
         .feature-item {
-            padding: 1rem;
-            background: #1F1F1F;
-            border-radius: 8px;
+            padding: 1.5rem;
+            background: var(--secondary-bg);
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         .trust-section {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin: 2rem 0;
+            margin: 3rem 0;
             opacity: 0.8;
+            flex-wrap: wrap;
         }
 
         .review-badge {
             background: #2C2C2C;
-            padding: 1rem;
-            border-radius: 8px;
+            padding: 1.2rem;
+            border-radius: 12px;
             margin: 2rem 0;
+            border: 1px solid #3E3E3E;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .logo {
+                max-width: 180px;
+                margin-bottom: 2rem;
+            }
+
+            .product-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .cta-button:before {
+                display: none;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="product-header">
-            <div class="badge">✅ Progettazione Europea Certificata</div>
+        <img src="logo.jpg" alt="EvolutionAuto Logo" class="logo">
+
+        <header class="product-header">
+            <div class="badge">✅ Design ispirato agli standard europei</div>
             <h1>Spoiler Aerodinamico EVO-X9</h1>
-        </div>
+        </header>
 
         <div class="stock-wrapper">
             <div class="progress-bar">
@@ -148,46 +208,57 @@
             <p>Ultimi pezzi disponibili - Nuova fornitura: 3-4 settimane</p>
         </div>
 
-        <button class="cta-button">
+        <button class="cta-button" onclick="window.location.href='https://www.ebay.it/itm/356379922337'">
             🛒 Acquista Ora 
         </button>
 
         <div class="features-grid">
             <div class="feature-item">
-                🏭 Materiali Compositi
-                <div class="feature-desc">Leghe ad alta resistenza</div>
+                🏭 Materiale ABS H.Q.
+                <div class="feature-desc">Leggero e Resistente</div>
             </div>
             <div class="feature-item">
                 ⏱️ Installazione 15 min
-                <div class="feature-desc">Kit universale pre-assemblato</div>
+                <div class="feature-desc">Kit plug-and-play universale</div>
             </div>
             <div class="feature-item">
                 📦 Consegna Assicurata
-                <div class="feature-desc">Tracking in tempo reale</div>
+                <div class="feature-desc">Tracking GPS in tempo reale</div>
             </div>
         </div>
 
         <div class="review-badge">
-            ⭐ 4.9/5 su 1.234 clienti soddisfatti
+          ⭐ 4.9/5 - Acquirenti Soddisfatti
         </div>
 
         <div class="trust-section">
-            🔒 Pagamenti Sicuri | 📞 Supporto Tecnico | 🔄 30 Giorni Reso
+            <span>🔒 Pagamenti Sicuri</span>
+            <span>📞 Supporto 24/7</span>
+            <span>🔄 Reso Gratuito</span>
         </div>
     </div>
 
     <script>
-        // Simulazione progress bar
-        document.getElementById('progressFill').style.width = '4%';
+        // Animazione stock avanzata
+        let currentStock = 4;
+        const stockElement = document.querySelector('.stock-text span:first-child');
         
-        // Animazione stock (simulazione live)
-        let baseStock = 4;
-        setInterval(() => {
-            const variation = Math.random() < 0.5 ? -1 : 0;
-            const displayStock = Math.max(2, baseStock + variation);
-            document.querySelector('.stock-text span:first-child').innerHTML = 
-              `Disponibili: ${displayStock}`;
-        }, 15000);
+        function updateStock() {
+            if(currentStock > 0) {
+                const decrement = Math.random() < 0.7 ? 1 : 0;
+                currentStock = Math.max(0, currentStock - decrement);
+                stockElement.innerHTML = `Disponibili: ${currentStock}`;
+                document.getElementById('progressFill').style.width = `${currentStock}%`;
+            }
+        }
+
+        setInterval(updateStock, 15000);
+        
+        // Animazione al caricamento
+        window.addEventListener('load', () => {
+            document.querySelector('.logo').style.opacity = '1';
+            document.querySelector('.product-header').style.transform = 'translateY(0)';
+        });
     </script>
 </body>
 </html>
