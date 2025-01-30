@@ -3,43 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina a Tema Auto</title>
+    <title>Evoluzione Auto | Spoiler ad Alta Prestazione</title>
     <style>
         body {
-            background-color: #1a1a1a; /* Colore di sfondo intrigante */
-            font-family: Arial, sans-serif;
+            background-color: #1a1a1a; /* Sfondo elegante e moderno */
+            font-family: 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
             margin: 0;
+            color: #fff;
         }
 
         h1 {
-            color: #fff; /* Testo bianco per contrasto */
-            font-size: 28px;
-            margin-bottom: 5px; /* Ridotto lo spazio tra le due scritte */
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #FFD700; /* Oro per un tocco di lusso */
         }
 
-        p {
-            color: #ccc; /* Testo grigio chiaro */
-            font-size: 16px;
-            max-width: 600px;
+        .subtitle {
+            color: #ccc;
+            font-size: 18px;
+            margin-bottom: 20px;
             text-align: center;
+            max-width: 600px;
+        }
+
+        .highlight {
+            color: #FFD700;
+            font-weight: bold;
         }
 
         .button-container {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            margin-top: 20px;
+            gap: 15px;
+            margin-top: 30px;
             align-items: center;
         }
 
         .button {
-            padding: 10px 20px; /* Ridotta dimensione padding */
-            font-size: 16px; /* Ridotta dimensione font */
+            padding: 15px 30px;
+            font-size: 18px;
             background-color: #FFD700;
             color: #000;
             border: none;
@@ -48,6 +56,7 @@
             transition: background-color 0.3s ease, transform 0.2s ease;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
         }
 
         .button:hover {
@@ -55,53 +64,55 @@
             transform: scale(1.05);
         }
 
-        .circle-container {
-            position: relative;
-        }
-
         .circle-container img {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            margin-top: 20px;
+            border: 3px solid #FFD700; /* Bordo dorato per l'immagine */
         }
 
         .evolution-link {
-            color: #FFD700; /* Colore giallo per il link */
+            color: #FFD700;
             text-decoration: none;
+            font-weight: bold;
         }
 
         .evolution-link:hover {
-            text-decoration: underline; /* Sottolineato al passaggio del mouse */
+            text-decoration: underline;
         }
 
-        .horizontal-buttons {
-            display: flex;
-            gap: 10px; /* Spazio tra i pulsanti */
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #ccc;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <h1>Auto Evoluzione</h1>
-    <p>SCOPRI I NOSTRI PRODOTTI</p>
+    <h1>Trasforma la Tua Auto con il Nostro Spoiler</h1>
+    <p class="subtitle">
+        Scopri lo spoiler ad <span class="highlight">alta prestazione</span>, progettato per esaltare stile e aerodinamica. 
+        Realizzato con materiali di <span class="highlight">qualità superiore</span> e spedizione <span class="highlight">ultra-veloce</span>.
+    </p>
 
     <div class="button-container">
-        <div class="horizontal-buttons">
-        </div>
         <form action="https://www.ebay.it/itm/356379922337?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=VsZPRvvfT-K&sssrc=4429486&ssuid=VsZPRvvfT-K&var=&widget_ver=artemis&media=COPY">
-            <input type="submit" value="SPOILER PER TUTTE LE AUTO (clicca qui)" class="button">
+            <input type="submit" value="Acquista Ora il Tuo Spoiler" class="button">
         </form>
         <form action="https://t.me/offertea" method="get">
-            <input type="submit" value="Offerte a -70%" class="button">
+            <input type="submit" value="Scopri Offerte Esclusive (-70%)" class="button">
         </form>
     </div>
-    <p>Seguici su TikTok <a href="https://www.tiktok.com/@evolutionwow" class="evolution-link">@evolutionwow</a></p>
-       <p>auto.evoluzionewow@gmail.com</p>
+
+    <div class="footer">
+        <p>Seguici su <a href="https://www.tiktok.com/@evolutionwow" class="evolution-link">TikTok @evolutionwow</a></p>
+        <p>Contattaci: <a href="mailto:auto.evoluzionewow@gmail.com" class="evolution-link">auto.evoluzionewow@gmail.com</a></p>
+    </div>
+
     <div class="circle-container">
-        <img src="logo.jpg" alt="Descrizione dell'immagine">
+        <img src="logo.jpg" alt="Logo Evoluzione Auto">
     </div>
 </body>
 </html>
