@@ -82,25 +82,9 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
-        .progress-bar {
-            height: 12px;
-            background: #D32F2F;
-            border-radius: 6px;
-            margin: 1rem auto;
-            overflow: hidden;
-            max-width: 500px;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #4CAF50, #8BC34A);
-            width: 4%;
-            transition: var(--transition);
-        }
-
         .stock-text {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             font-size: 0.9rem;
             color: #888;
             max-width: 500px;
@@ -235,18 +219,14 @@
         </header>
 
         <div class="stock-wrapper">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
             <div class="stock-text">
                 <span>Disponibili: 4</span>
-                <span>Venduti: 96</span>
             </div>
             <p>Pezzi disponibili</p>
         </div>
 
         <button class="cta-button" onclick="window.location.href='https://www.ebay.it/itm/356379922337'">
-            🛒 Acquista Ora 
+            🛒 Acquista Ora 'Ebay'
         </button>
 
         <div class="features-grid">
@@ -276,21 +256,6 @@
     </div>
 
     <script>
-        // Animazione stock avanzata
-        let currentStock = 4;
-        const stockElement = document.querySelector('.stock-text span:first-child');
-        
-        function updateStock() {
-            if(currentStock > 0) {
-                const decrement = Math.random() < 0.7 ? 1 : 0;
-                currentStock = Math.max(0, currentStock - decrement);
-                stockElement.innerHTML = `Disponibili: ${currentStock}`;
-                document.getElementById('progressFill').style.width = `${currentStock}%`;
-            }
-        }
-
-        setInterval(updateStock, 15000);
-        
         // Animazione al caricamento
         window.addEventListener('load', () => {
             document.querySelector('.logo').style.opacity = '1';
