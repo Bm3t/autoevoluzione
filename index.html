@@ -82,6 +82,26 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
+        .progress-bar {
+            height: 12px;
+            background: #D32F2F; /* Rosso per i pezzi esauriti */
+            border-radius: 6px;
+            margin: 1rem auto;
+            overflow: hidden;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #4CAF50; /* Verde per i pezzi disponibili */
+            width: 4%; /* 4% perché ci sono 4 pezzi disponibili su 100 */
+            border-radius: 6px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
         .stock-text {
             display: flex;
             justify-content: center;
@@ -219,6 +239,9 @@
         </header>
 
         <div class="stock-wrapper">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
             <div class="stock-text">
                 <span>Disponibili: 4</span>
             </div>
@@ -226,7 +249,7 @@
         </div>
 
         <button class="cta-button" onclick="window.location.href='https://www.ebay.it/itm/356379922337'">
-            🛒 Acquista Ora 'Ebay'
+            🛒 Acquista Ora
         </button>
 
         <div class="features-grid">
