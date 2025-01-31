@@ -26,14 +26,26 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 30px;
         }
 
         .logo {
-            max-width: 250px;
-            margin: 1rem auto 3rem;
+            width: 200px;
+            height: 200px;
+            margin: 2rem auto;
             display: block;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            padding: 8px;
+            object-fit: cover;
             transition: var(--transition);
+            box-shadow: 0 0 25px rgba(255,215,0,0.2);
+            background: var(--dark);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(255,215,0,0.4);
         }
 
         .badge {
@@ -58,6 +70,8 @@
             background: linear-gradient(45deg, #FFD700, #FFFFFF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+            margin-top: -15px;
         }
 
         .stock-wrapper {
@@ -162,20 +176,38 @@
             border-radius: 12px;
             margin: 2rem 0;
             border: 1px solid #3E3E3E;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .review-badge:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255,215,0,0.1), 
+                transparent);
+            transform: rotate(-45deg);
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 10px;
+                padding: 15px;
             }
 
             .logo {
-                max-width: 180px;
-                margin-bottom: 2rem;
+                width: 150px;
+                height: 150px;
+                margin-bottom: 1.5rem;
             }
 
             .product-header h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
+                margin-top: -10px;
             }
 
             .cta-button:before {
@@ -184,6 +216,11 @@
 
             .features-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .cta-button {
+                padding: 1.2rem 2rem;
+                font-size: 1rem;
             }
         }
     </style>
@@ -228,7 +265,7 @@
         </div>
 
         <div class="review-badge">
-          ⭐ 4.9/5 - Acquirenti Soddisfatti
+            ⭐ 4.9/5 - Acquirenti Soddisfatti
         </div>
 
         <div class="trust-section">
