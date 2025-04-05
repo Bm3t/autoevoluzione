@@ -34,10 +34,23 @@
         }
 
         .logo {
-            width: 180px;
-            margin-bottom: 1.5rem;
+            width: 60px;
+            height: 60px;
+            margin: 2rem auto;
+            display: block;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            padding: 8px;
+            object-fit: cover;
+            transition: var(--transition);
+            box-shadow: 0 0 25px rgba(255,215,0,0.2);
+            background: var(--dark);
         }
 
+        .logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(255,215,0,0.4);
+        }
         .urgency-badge {
             background: linear-gradient(45deg, #D32F2F, #B71C1C);
             color: white;
@@ -126,7 +139,7 @@
     <div class="container">
         <header>
             <img src="logo.jpg" alt="EvolutionAuto" class="logo">
-            <br> 
+            <br>
             <div class="urgency-badge">⚡ OFFERTA LIMITATA - SCADE TRA <span id="countdown">24:00:00</span></div>
             <h1>Spoiler Universale Premium</h1>
             <p>Seleziona la tua auto per vedere il risultato personalizzato</p>
