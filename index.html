@@ -3,65 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Trasforma la tua auto con gli esclusivi kit aerodinamici EvolutionAuto. Offerte TikTok Limited Edition!">
-    <title>Aerokit Premium | EvolutionAuto</title>
+    <meta name="description" content="Kit Aerodinamici Professionali - Trasforma la tua auto con gli spoiler EvolutionAuto. Offerte Limited Edition per la community TikTok!">
+    <title>EvolutionAuto | Kit Aerodinamici Premium</title>
     <style>
-        /* Aggiunte CSS */
-        .bundles-section {
-            margin: 3rem 0;
-            padding: 2rem;
-            background: #0A0A0A;
-            border-radius: 15px;
+        /* ---------- BASE STYLES ---------- */
+        :root {
+            --primary: #FFD700;
+            --dark: #0A0A0A;
+            --light: #FFFFFF;
+            --secondary-bg: #1A1A1A;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .kit-grid {
+        body {
+            background: var(--dark);
+            color: var(--light);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* ---------- HEADER SECTION ---------- */
+        .hero-section {
+            text-align: center;
+            padding: 4rem 0;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .logo {
+            width: 180px;
+            margin: 0 auto 2rem;
+            display: block;
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
+        }
+
+        .urgency-badge {
+            background: linear-gradient(45deg, #D32F2F, #B71C1C);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ---------- PRODUCT BUNDLES ---------- */
+        .bundles-section {
+            margin: 4rem 0;
+        }
+
+        .bundles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin: 2rem 0;
+            margin-top: 2rem;
         }
 
-        .kit-card {
+        .bundle-card {
             background: var(--secondary-bg);
-            border: 2px solid var(--primary);
             border-radius: 12px;
             padding: 1.5rem;
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: var(--transition);
         }
 
-        .kit-badge {
+        .bundle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .bundle-badge {
             position: absolute;
-            top: 10px;
+            top: 15px;
             right: -30px;
-            background: #D32F2F;
-            color: white;
+            background: var(--primary);
+            color: var(--dark);
             padding: 0.3rem 2rem;
             transform: rotate(45deg);
+            font-weight: bold;
             font-size: 0.8rem;
+            width: 120px;
+            text-align: center;
         }
 
-        .countdown {
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin: 1rem 0;
-            padding: 1rem;
-            border: 1px solid var(--primary);
-            border-radius: 8px;
-        }
-
-        .review-grid {
+        .before-after-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 1fr 1fr;
             gap: 1rem;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
+        }
+
+        .before-after-grid img {
+            width: 100%;
+            border-radius: 8px;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+
+        /* ---------- REVIEWS SECTION ---------- */
+        .reviews-section {
+            margin: 4rem 0;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
         .review-card {
-            background: #1E1E1E;
+            background: var(--secondary-bg);
             padding: 1.5rem;
             border-radius: 12px;
-            border: 1px solid #333;
+            border: 1px solid rgba(255, 215, 0, 0.1);
         }
 
         .review-author {
@@ -72,123 +135,155 @@
         }
 
         .review-author img {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
+            border: 2px solid var(--primary);
+        }
+
+        /* ---------- CTA BUTTONS ---------- */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 1.2rem;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+
+        .cta-primary {
+            background: linear-gradient(45deg, #FFD700, #FFC107);
+            color: var(--dark);
+        }
+
+        .cta-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        /* ---------- RESPONSIVE DESIGN ---------- */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .bundles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .before-after-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="logo.jpg" alt="EvolutionAuto Logo" class="logo">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <img src="logo.png" alt="EvolutionAuto" class="logo">
+            <div class="urgency-badge">🚨 OFFERTA TIKTOK - SCADE TRA <span id="countdown">24:00:00</span></div>
+            <h1>Trasforma la Tua Auto</h1>
+            <p>Kit aerodinamici premium per un look aggressivo</p>
+        </section>
 
-        <header class="product-header">
-            <div class="badge">🔥 OFFERTA TIKTOK ESCLUSIVA</div>
-            <h1>EVO-X9 Universal Spoiler</h1>
-            <div class="countdown">⏳ L'offerta scade tra <span id="timer">23:59:59</span></div>
-        </header>
-
-        <div class="bundles-section">
-            <h2>🔥 Kit Speciali per Modelli Popolari</h2>
-            
-            <div class="kit-grid">
-                <!-- Kit Giulietta -->
-                <div class="kit-card">
-                    <div class="kit-badge">TIKTOK20</div>
-                    <h3>Giulietta "Tiger Edition"</h3>
-                    <div class="before-after" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
-                        <img src="giulietta-stock.jpg" alt="Before" style="border-radius: 8px;">
-                        <img src="giulietta-modificata.jpg" alt="After" style="border-radius: 8px;">
+        <!-- Bundle Kits -->
+        <section class="bundles-section">
+            <h2>Pacchetti Popolari</h2>
+            <div class="bundles-grid">
+                <!-- Kit Tiger -->
+                <div class="bundle-card">
+                    <div class="bundle-badge">-20% TIKTOK20</div>
+                    <h3>Tiger Edition (Alfa Romeo Giulietta)</h3>
+                    <div class="before-after-grid">
+                        <img src="giulietta-stock.jpg" alt="Prima">
+                        <img src="giulietta-modificata.jpg" alt="Dopo">
                     </div>
-                    <p>Incluso nel kit:</p>
                     <ul>
-                        <li>✔️ Spoiler EVO-X9 Universal</li>
-                        <li>✔️ Adesivo Tiger Edition</li>
-                        <li>✔️ Guida Installazione Video</li>
+                        <li>✔️ Spoiler in ABS Ultra-Leggero</li>
+                        <li>✔️ Kit Installazione Rapida</li>
+                        <li>✔️ Adesivo Esclusivo</li>
                     </ul>
-                    <button class="cta-button" onclick="window.location.href='https://www.ebay.it/itm/356379922337'" 
-                            style="background: linear-gradient(45deg, #FF416C, #FF4B2B); margin: 1rem 0;">
-                        🐅 Acquista Tiger Kit - €49
-                    </button>
+                    <a href="https://www.ebay.it/kit-tiger" class="cta-button cta-primary">
+                        🐅 Acquista Ora - €49
+                    </a>
                 </div>
 
-                <!-- Kit Black Mamba -->
-                <div class="kit-card">
-                    <div class="kit-badge">TIKTOK30</div>
-                    <h3>Giulietta "Black Mamba"</h3>
-                    <img src="black-mamba-kit.jpg" alt="Black Mamba Kit" style="width: 100%; border-radius: 8px;">
-                    <p>Kit Premium include:</p>
+                <!-- Kit Mamba -->
+                <div class="bundle-card">
+                    <div class="bundle-badge">-30% TIKTOK30</div>
+                    <h3>Black Mamba Edition</h3>
+                    <div class="before-after-grid">
+                        <img src="mamba-stock.jpg" alt="Prima">
+                        <img src="mamba-modificata.jpg" alt="Dopo">
+                    </div>
                     <ul>
-                        <li>✔️ Spoiler EVO-X9 Carbon Look</li>
-                        <li>✔️ Vitrinatura Nera Sportiva</li>
-                        <li>✔️ Adesivo Limited Edition</li>
+                        <li>✔️ Finitura Carbonio</li>
+                        <li>✔️ Vitrinatura Sportiva</li>
+                        <li>✔️ Supporto VIP 24/7</li>
                     </ul>
-                    <button class="cta-button" onclick="window.location.href='https://www.ebay.it/itm/356379922338'" 
-                            style="background: linear-gradient(45deg, #000000, #434343);">
-                        🐍 Acquista Mamba Kit - €79
-                    </button>
+                    <a href="https://www.ebay.it/kit-mamba" class="cta-button cta-primary">
+                        🐍 Acquista Ora - €79
+                    </a>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="review-grid">
-            <div class="review-card">
-                <div class="review-author">
-                    <img src="https://thispersondoesnotexist.com/" alt="Cliente">
-                    <div>
-                        <strong>Marco R.</strong><br>
-                        <small>Giulietta Owner</small>
+        <!-- Recensioni -->
+        <section class="reviews-section">
+            <h2>Cosa Dicono i Clienti</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-author">
+                        <img src="https://thispersondoesnotexist.com/" alt="Marco">
+                        <div>
+                            <h4>Marco R.</h4>
+                            <small>Giulietta Owner</small>
+                        </div>
                     </div>
+                    <p>"Montaggio semplicissimo, risultato professionale! Servizio clienti top."</p>
                 </div>
-                "Ho preso il Tiger Kit... sembra un'auto nuova! Installazione facilissima."
-            </div>
 
-            <div class="review-card">
-                <div class="review-author">
-                    <img src="https://thispersondoesnotexist.com/" alt="Cliente">
-                    <div>
-                        <strong>Laura B.</strong><br>
-                        <small>Fiat 500 Abarth</small>
+                <div class="review-card">
+                    <div class="review-author">
+                        <img src="https://thispersondoesnotexist.com/" alt="Laura">
+                        <div>
+                            <h4>Laura B.</h4>
+                            <small>Fiat 500 Abarth</small>
+                        </div>
                     </div>
+                    <p>"Lo spoiler ha cambiato completamente l'aspetto della mia auto. Consigliatissimo!"</p>
                 </div>
-                "Service top! Lo spoiler è perfetto, tutti me lo chiedono 😎"
             </div>
-        </div>
-
-        <!-- Sezione Custom Kit -->
-        <div class="feature-item" style="text-align: left; padding: 2rem;">
-            <h3>🚀 Vuoi un Kit Personalizzato?</h3>
-            <p>Inviaci un DM su TikTok <strong>@evolutionwow</strong> con:</p>
-            <ol>
-                <li>Una foto della tua auto</li>
-                <li>Il look che desideri</li>
-            </ol>
-            <p>Ti creeremo un rendering 3D GRATIS!</p>
-        </div>
+        </section>
     </div>
 
     <script>
         // Countdown Timer
         function updateTimer() {
-            const endTime = new Date();
-            endTime.setHours(23, 59, 59); // Imposta ogni giorno a mezzanotte
-            
             const now = new Date();
-            const diff = endTime - now;
+            const end = new Date();
+            end.setHours(23, 59, 59, 999); // Resetta ogni giorno
 
+            const diff = end - now;
             const hours = Math.floor(diff / (1000 * 60 * 60));
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-            document.getElementById('timer').innerHTML = 
-                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-            setTimeout(updateTimer, 1000);
+            document.getElementById('countdown').textContent = 
+                `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            
+            requestAnimationFrame(updateTimer);
         }
         updateTimer();
 
-        // Animazione Caricamento Immagini
-        document.querySelectorAll('img').forEach(img => {
+        // Animazione Immagini
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
             img.style.opacity = '0';
             setTimeout(() => {
                 img.style.transition = 'opacity 0.5s ease';
