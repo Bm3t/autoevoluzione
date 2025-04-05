@@ -1,68 +1,124 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <!-- Aggiunte CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvolutionAuto | Spoiler Universale Personalizzato</title>
     <style>
-        /* Nuovi stili */
-        .universal-hero {
-            background: linear-gradient(45deg, #1A237E, #0D47A1);
+        :root {
+            --primary: #FFD700;
+            --dark: #121212;
+            --light: #FFFFFF;
+            --secondary-bg: #1E1E1E;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: var(--dark);
+            color: var(--light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
             padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            position: relative;
-            overflow: hidden;
         }
 
-        .universal-hero:after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, rgba(0,0,0,0) 70%);
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
-        .kit-comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 2rem 0;
+        .logo {
+            width: 180px;
+            margin-bottom: 1.5rem;
         }
 
-        .kit-option {
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 2px solid;
-        }
-
-        .universal-option {
-            border-color: #4CAF50;
-            background: rgba(76, 175, 80, 0.1);
-        }
-
-        .specific-option {
-            border-color: #FFD700;
-            background: rgba(255, 215, 0, 0.1);
-        }
-
-        .recommended-badge {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background: #D32F2F;
+        .urgency-badge {
+            background: linear-gradient(45deg, #D32F2F, #B71C1C);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            transform: rotate(15deg);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 1rem 0;
+            font-size: 0.9rem;
         }
 
-        .faq-section {
+        .car-selector {
             background: var(--secondary-bg);
             padding: 2rem;
-            border-radius: 12px;
+            border-radius: 10px;
             margin: 2rem 0;
+            text-align: center;
+        }
+
+        select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 2px solid var(--primary);
+            background: #333;
+            color: white;
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+        .kit-container {
+            display: none; /* Nascondi inizialmente */
+            background: var(--secondary-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .before-after img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #FFD700, #FFC107);
+            color: black;
+            padding: 1.2rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .before-after {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -70,145 +126,136 @@
     <div class="container">
         <header>
             <img src="logo.png" alt="EvolutionAuto" class="logo">
-            <div class="urgency-badge">🔥 SCONTO 20% SU TUTTO - SOLO OGGI!</div>
+            <div class="urgency-badge">⚡ OFFERTA LIMITATA - SCADE TRA <span id="countdown">24:00:00</span></div>
+            <h1>Spoiler Universale Premium</h1>
+            <p>Seleziona la tua auto per vedere il risultato personalizzato</p>
         </header>
 
-        <!-- Sezione Universale in Primo Piano -->
-        <div class="universal-hero">
-            <div class="badge" style="background:#4CAF50;">BEST SELLER</div>
-            <h2>Spoiler Universale EVO-X9 PRO</h2>
+        <div class="car-selector">
+            <h2>1. Scegli il Modello</h2>
+            <select id="carModel">
+                <option value="">-- Seleziona Auto --</option>
+                <option value="giulietta">Alfa Romeo Giulietta</option>
+                <option value="fiat500">Fiat 500</option>
+                <option value="polo">Volkswagen Polo</option>
+                <option value="qashqai">Nissan Qashqai</option>
+            </select>
+        </div>
+
+        <!-- Kit per Alfa Romeo Giulietta -->
+        <div id="giulietta-kit" class="kit-container">
+            <h2>Alfa Romeo Giulietta - Tiger Edition</h2>
             <div class="before-after">
-                <img src="universal-before.jpg" alt="Auto generica senza spoiler">
-                <img src="universal-after.jpg" alt="Auto generica con spoiler">
+                <img src="giulietta-stock.jpg" alt="Prima">
+                <img src="giulietta-modificata.jpg" alt="Dopo">
             </div>
-            
-            <div class="kit-comparison">
-                <div class="kit-option universal-option">
-                    <h3>🔧 Kit Base Universale</h3>
-                    <ul>
-                        <li>✔️ Adatta a qualsiasi auto</li>
-                        <li>✔️ Installazione base</li>
-                        <li>✔️ Garanzia 6 mesi</li>
-                    </ul>
-                    <a href="https://www.ebay.it/universale" class="cta-button" style="background:#4CAF50;">
-                        🎯 ACQUISTA ORA - €39
-                    </a>
-                </div>
-
-                <div class="kit-option specific-option" style="position:relative;">
-                    <div class="recommended-badge">PIÙ VENDUTO</div>
-                    <h3>🚘 Kit Specifico Premium</h3>
-                    <p>Scegli il modello qui sotto:</p>
-                    <select id="carModel" style="width:100%; margin:1rem 0;">
-                        <option value="">-- Seleziona Auto --</option>
-                        <option value="giulietta">Alfa Romeo Giulietta</option>
-                        <option value="fiat500">Fiat 500</option>
-                        <option value="polo">Volkswagen Polo</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sezione Kit Specifici (Visibile solo dopo selezione) -->
-        <div id="specific-kits" style="display:none;">
-            <div class="kit-comparison">
-                <div class="kit-option universal-option">
-                    <h3>🔧 Versione Universale</h3>
-                    <p>Per chi cerca flessibilità:</p>
-                    <ul>
-                        <li>✔️ Adattabile a qualsiasi modello</li>
-                        <li>✔️ Risparmia €10</li>
-                        <li>⏱️ Installazione in 20 min</li>
-                    </ul>
-                    <a href="https://www.ebay.it/universale" class="cta-button" style="background:#4CAF50;">
-                        🎯 SCELGO UNIVERSALE - €39
-                    </a>
-                </div>
-
-                <div class="kit-option specific-option">
-                    <h3>🚘 Kit Premium Personalizzato</h3>
-                    <ul>
-                        <li>✔️ Adattamento perfetto</li>
-                        <li>✔️ Accessori esclusivi</li>
-                        <li>⭐ Garanzia 2 anni</li>
-                    </ul>
-                    <a href="#" class="cta-button" id="specific-cta">
-                        🏁 SCELGO PREMIUM - €49
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- FAQ Section -->
-        <div class="faq-section">
-            <h3>❓ Perché Scegliere Noi?</h3>
+            <p>Kit completo include:</p>
             <ul>
-                <li>🔒 Pagamento Sicuro al 100%</li>
-                <li>🚚 Spedizione Express 24/48h</li>
-                <li>💬 Assistenza Italiana WhatsApp</li>
+                <li>✔️ Spoiler universale EVO-X9</li>
+                <li>✔️ Adesivo Tiger Edition</li>
+                <li>✔️ Guida installazione video</li>
             </ul>
+            <a href="https://www.ebay.it/giulietta-spoiler" class="cta-button">🐅 ACQUISTA ORA - €49</a>
         </div>
 
-        <!-- Recensioni Aggiornate -->
-        <div class="review-grid">
-            <div class="review-card">
-                <div class="review-author">
-                    <img src="https://thispersondoesnotexist.com/" alt="Cliente">
-                    <div>
-                        <strong>Luca P.</strong><br>
-                        <small>Ha scelto: Universale</small>
-                    </div>
-                </div>
-                "Adattato perfettamente alla mia Golf, risparmiato €15!"
+        <!-- Kit per Fiat 500 -->
+        <div id="fiat500-kit" class="kit-container">
+            <h2>Fiat 500 - Street Racer Edition</h2>
+            <div class="before-after">
+                <img src="fiat500-stock.jpg" alt="Prima">
+                <img src="fiat500-modificata.jpg" alt="Dopo">
             </div>
+            <p>Kit completo include:</p>
+            <ul>
+                <li>✔️ Spoiler universale EVO-X9</li>
+                <li>✔️ Adesivo Street Racer</li>
+                <li>✔️ Viti antiruggine</li>
+            </ul>
+            <a href="https://www.ebay.it/fiat500-spoiler" class="cta-button">🏁 ACQUISTA ORA - €49</a>
+        </div>
 
-            <div class="review-card">
-                <div class="review-author">
-                    <img src="https://thispersondoesnotexist.com/" alt="Cliente">
-                    <div>
-                        <strong>Giulia R.</strong><br>
-                        <small>Ha scelto: Premium</small>
-                    </div>
-                </div>
-                "Il kit specifico era perfetto, installazione in 10 minuti!"
+        <!-- Kit per Volkswagen Polo -->
+        <div id="polo-kit" class="kit-container">
+            <h2>Volkswagen Polo - Black Edition</h2>
+            <div class="before-after">
+                <img src="polo-stock.jpg" alt="Prima">
+                <img src="polo-modificata.jpg" alt="Dopo">
             </div>
+            <p>Kit completo include:</p>
+            <ul>
+                <li>✔️ Spoiler universale EVO-X9</li>
+                <li>✔️ Finitura nera opaca</li>
+                <li>✔️ Manuale illustrato</li>
+            </ul>
+            <a href="https://www.ebay.it/polo-spoiler" class="cta-button">🖤 ACQUISTA ORA - €49</a>
+        </div>
+
+        <!-- Kit per Nissan Qashqai -->
+        <div id="qashqai-kit" class="kit-container">
+            <h2>Nissan Qashqai - Urban Edition</h2>
+            <div class="before-after">
+                <img src="qashqai-stock.jpg" alt="Prima">
+                <img src="qashqai-modificata.jpg" alt="Dopo">
+            </div>
+            <p>Kit completo include:</p>
+            <ul>
+                <li>✔️ Spoiler universale EVO-X9</li>
+                <li>✔️ Adattatori per SUV</li>
+                <li>✔️ Assistenza telefonica</li>
+            </ul>
+            <a href="https://www.ebay.it/qashqai-spoiler" class="cta-button">🏙️ ACQUISTA ORA - €59</a>
         </div>
     </div>
 
     <script>
-        // Nuovo JavaScript
-        const carModelSelect = document.getElementById('carModel');
-        const specificKitsSection = document.getElementById('specific-kits');
-        const specificCta = document.getElementById('specific-cta');
+        // Countdown Timer
+        function updateTimer() {
+            const now = new Date();
+            const end = new Date();
+            end.setHours(23, 59, 59, 999);
+            
+            const diff = end - now;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-        // Mappa dei link eBay
-        const ebayLinks = {
-            'giulietta': 'https://www.ebay.it/giulietta-premium',
-            'fiat500': 'https://www.ebay.it/fiat500-premium',
-            'polo': 'https://www.ebay.it/polo-premium'
-        };
+            document.getElementById('countdown').textContent = 
+                `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            
+            setTimeout(updateTimer, 1000);
+        }
+        updateTimer();
 
-        carModelSelect.addEventListener('change', function() {
-            if(this.value) {
-                specificKitsSection.style.display = 'block';
-                specificCta.href = ebayLinks[this.value];
-                specificCta.innerHTML = `🏁 SCELGO PREMIUM - €49 <small>(Sconto TikTok)</small>`;
-                
-                // Scroll alla sezione
-                specificKitsSection.scrollIntoView({behavior: 'smooth'});
-
-                // Animazione
-                specificKitsSection.style.animation = 'fadeIn 0.5s ease';
+        // Gestione selezione auto
+        document.getElementById('carModel').addEventListener('change', function() {
+            // Nascondi tutti i kit
+            document.querySelectorAll('.kit-container').forEach(kit => {
+                kit.style.display = 'none';
+            });
+            
+            // Mostra solo il kit selezionato
+            const selectedCar = this.value;
+            if (selectedCar) {
+                const kitElement = document.getElementById(`${selectedCar}-kit`);
+                if (kitElement) {
+                    kitElement.style.display = 'block';
+                    
+                    // Scrolla fino al kit
+                    kitElement.scrollIntoView({ behavior: 'smooth' });
+                }
             }
         });
 
-        // Aggiunta timer di urgenza
-        let urgencyTimer = 30;
-        setInterval(() => {
-            urgencyTimer--;
-            document.querySelector('.urgency-badge').innerHTML = 
-                `🔥 ${urgencyTimer} ACQUISTI A PREZZO SCONTATO!`;
-        }, 60000); // Aggiorna ogni minuto
+        // Animazione immagini al caricamento
+        window.addEventListener('load', () => {
+            document.querySelectorAll('img').forEach(img => {
+                img.style.opacity = '0';
+                setTimeout(() => {
+                    img.style.transition = 'opacity 0.5s ease';
+                    img.style.opacity = '1';
+                }, 300);
+            });
+        });
     </script>
 </body>
 </html>
