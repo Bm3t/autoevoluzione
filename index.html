@@ -3,226 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Acquista lo spoiler EVO-X9 premium per la tua auto. Design certificato, materiali di alta qualità e installazione immediata.">
+    <meta name="description" content="Trasforma la tua auto con gli esclusivi kit aerodinamici EvolutionAuto. Offerte TikTok Limited Edition!">
     <title>Aerokit Premium | EvolutionAuto</title>
     <style>
-        :root {
-            --primary: #FFD700;
-            --dark: #121212;
-            --light: #FFFFFF;
-            --secondary-bg: #1A1A1A;
-            --transition: all 0.3s ease;
+        /* Aggiunte CSS */
+        .bundles-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: #0A0A0A;
+            border-radius: 15px;
         }
 
-        body {
-            background: var(--dark);
-            color: var(--light);
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 30px;
-        }
-
-        .logo {
-            width: 200px;
-            height: 200px;
-            margin: 2rem auto;
-            display: block;
-            border-radius: 50%;
-            border: 3px solid var(--primary);
-            padding: 8px;
-            object-fit: cover;
-            transition: var(--transition);
-            box-shadow: 0 0 25px rgba(255,215,0,0.2);
-            background: var(--dark);
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 35px rgba(255,215,0,0.4);
-        }
-
-        .badge {
-            background: rgba(255,215,0,0.1);
-            color: var(--primary);
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            margin: 2rem auto;
-            display: inline-block;
-            border: 1px solid var(--primary);
-            backdrop-filter: blur(5px);
-        }
-
-        .product-header {
-            margin-bottom: 3rem;
-        }
-
-        .product-header h1 {
-            font-size: 2.5rem;
-            margin: 1rem 0;
-            background: linear-gradient(45deg, #FFD700, #FFFFFF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: 1px;
-            margin-top: -15px;
-        }
-
-        .stock-wrapper {
+        .kit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin: 2rem 0;
-            padding: 1.5rem;
+        }
+
+        .kit-card {
             background: var(--secondary-bg);
+            border: 2px solid var(--primary);
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-        }
-
-        .stock-text {
-            font-size: 0.9rem;
-            color: #888;
-            margin-bottom: 0.5rem;
-        }
-
-        .progress-bar {
-            height: 12px;
-            background: #D32F2F; /* Rosso per i pezzi esauriti */
-            border-radius: 6px;
-            margin: 0 auto;
-            overflow: hidden;
-            max-width: 500px;
-            position: relative;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: #4CAF50; /* Verde per i pezzi disponibili */
-            width: 4%; /* 4% perché ci sono 4 pezzi disponibili su 100 */
-            border-radius: 6px;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        .cta-button {
-            background: linear-gradient(45deg, #FFD700, #FFC107);
-            color: #000;
-            padding: 1.5rem 3rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: var(--transition);
-            margin: 2rem 0;
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
+            padding: 1.5rem;
             position: relative;
             overflow: hidden;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255,215,0,0.3);
-        }
-
-        .cta-button:before {
-            content: '🚚 Spedizione Veloce';
+        .kit-badge {
             position: absolute;
-            background: #388E3C;
+            top: 10px;
+            right: -30px;
+            background: #D32F2F;
             color: white;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
+            padding: 0.3rem 2rem;
+            transform: rotate(45deg);
             font-size: 0.8rem;
-            right: -140px;
-            white-space: nowrap;
         }
 
-        .features-grid {
+        .countdown {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+        }
+
+        .review-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
-        }
-
-        .feature-item {
-            padding: 1.5rem;
-            background: var(--secondary-bg);
-            border-radius: 12px;
-            transition: var(--transition);
-        }
-
-        .feature-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        .trust-section {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 3rem 0;
-            opacity: 0.8;
-            flex-wrap: wrap;
-        }
-
-        .review-badge {
-            background: #2C2C2C;
-            padding: 1.2rem;
-            border-radius: 12px;
+            gap: 1rem;
             margin: 2rem 0;
-            border: 1px solid #3E3E3E;
-            position: relative;
-            overflow: hidden;
         }
 
-        .review-badge:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -50%;
-            width: 200%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255,215,0,0.1), 
-                transparent);
-            transform: rotate(-45deg);
+        .review-card {
+            background: #1E1E1E;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #333;
         }
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
 
-            .logo {
-                width: 150px;
-                height: 150px;
-                margin-bottom: 1.5rem;
-            }
-
-            .product-header h1 {
-                font-size: 2rem;
-                margin-top: -10px;
-            }
-
-            .cta-button:before {
-                display: none;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-button {
-                padding: 1.2rem 2rem;
-                font-size: 1rem;
-            }
+        .review-author img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
         }
     </style>
 </head>
@@ -231,54 +83,117 @@
         <img src="logo.jpg" alt="EvolutionAuto Logo" class="logo">
 
         <header class="product-header">
-            <div class="badge">✅ Design ispirato agli standard europei</div>
-            <h1>Spoiler EVO-X9</h1>
+            <div class="badge">🔥 OFFERTA TIKTOK ESCLUSIVA</div>
+            <h1>EVO-X9 Universal Spoiler</h1>
+            <div class="countdown">⏳ L'offerta scade tra <span id="timer">23:59:59</span></div>
         </header>
 
-                <button class="cta-button" onclick="window.location.href='https://www.ebay.it/itm/356379922337'">
-            🛒 Acquista Ora 
-        </button>
+        <div class="bundles-section">
+            <h2>🔥 Kit Speciali per Modelli Popolari</h2>
+            
+            <div class="kit-grid">
+                <!-- Kit Giulietta -->
+                <div class="kit-card">
+                    <div class="kit-badge">TIKTOK20</div>
+                    <h3>Giulietta "Tiger Edition"</h3>
+                    <div class="before-after" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0;">
+                        <img src="giulietta-stock.jpg" alt="Before" style="border-radius: 8px;">
+                        <img src="giulietta-modificata.jpg" alt="After" style="border-radius: 8px;">
+                    </div>
+                    <p>Incluso nel kit:</p>
+                    <ul>
+                        <li>✔️ Spoiler EVO-X9 Universal</li>
+                        <li>✔️ Adesivo Tiger Edition</li>
+                        <li>✔️ Guida Installazione Video</li>
+                    </ul>
+                    <button class="cta-button" onclick="window.location.href='https://www.ebay.it/itm/356379922337'" 
+                            style="background: linear-gradient(45deg, #FF416C, #FF4B2B); margin: 1rem 0;">
+                        🐅 Acquista Tiger Kit - €49
+                    </button>
+                </div>
 
-        <div class="stock-wrapper">
-            <div class="stock-text">
-                Pezzi disponibili: <strong>4</strong>
-            </div>
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
+                <!-- Kit Black Mamba -->
+                <div class="kit-card">
+                    <div class="kit-badge">TIKTOK30</div>
+                    <h3>Giulietta "Black Mamba"</h3>
+                    <img src="black-mamba-kit.jpg" alt="Black Mamba Kit" style="width: 100%; border-radius: 8px;">
+                    <p>Kit Premium include:</p>
+                    <ul>
+                        <li>✔️ Spoiler EVO-X9 Carbon Look</li>
+                        <li>✔️ Vitrinatura Nera Sportiva</li>
+                        <li>✔️ Adesivo Limited Edition</li>
+                    </ul>
+                    <button class="cta-button" onclick="window.location.href='https://www.ebay.it/itm/356379922338'" 
+                            style="background: linear-gradient(45deg, #000000, #434343);">
+                        🐍 Acquista Mamba Kit - €79
+                    </button>
+                </div>
             </div>
         </div>
 
-        <div class="features-grid">
-            <div class="feature-item">
-                🏭 Materiale ABS H.Q.
-                <div class="feature-desc">Leggero e Resistente</div>
+        <div class="review-grid">
+            <div class="review-card">
+                <div class="review-author">
+                    <img src="https://thispersondoesnotexist.com/" alt="Cliente">
+                    <div>
+                        <strong>Marco R.</strong><br>
+                        <small>Giulietta Owner</small>
+                    </div>
+                </div>
+                "Ho preso il Tiger Kit... sembra un'auto nuova! Installazione facilissima."
             </div>
-            <div class="feature-item">
-                ⏱️ Installazione 15 min
-                <div class="feature-desc">Kit plug-and-play universale</div>
-            </div>
-            <div class="feature-item">
-                📦 Consegna Assicurata
-                <div class="feature-desc">Tracking GPS in tempo reale</div>
+
+            <div class="review-card">
+                <div class="review-author">
+                    <img src="https://thispersondoesnotexist.com/" alt="Cliente">
+                    <div>
+                        <strong>Laura B.</strong><br>
+                        <small>Fiat 500 Abarth</small>
+                    </div>
+                </div>
+                "Service top! Lo spoiler è perfetto, tutti me lo chiedono 😎"
             </div>
         </div>
 
-        <div class="review-badge">
-            ⭐ 4.9/5 - Acquirenti Soddisfatti
-        </div>
-
-        <div class="trust-section">
-            <span>🔒 Pagamenti Sicuri</span>
-            <span>📞 Supporto 24/7</span>
-            <span>🔄 Reso Gratuito</span>
+        <!-- Sezione Custom Kit -->
+        <div class="feature-item" style="text-align: left; padding: 2rem;">
+            <h3>🚀 Vuoi un Kit Personalizzato?</h3>
+            <p>Inviaci un DM su TikTok <strong>@evolutionwow</strong> con:</p>
+            <ol>
+                <li>Una foto della tua auto</li>
+                <li>Il look che desideri</li>
+            </ol>
+            <p>Ti creeremo un rendering 3D GRATIS!</p>
         </div>
     </div>
 
     <script>
-        // Animazione al caricamento
-        window.addEventListener('load', () => {
-            document.querySelector('.logo').style.opacity = '1';
-            document.querySelector('.product-header').style.transform = 'translateY(0)';
+        // Countdown Timer
+        function updateTimer() {
+            const endTime = new Date();
+            endTime.setHours(23, 59, 59); // Imposta ogni giorno a mezzanotte
+            
+            const now = new Date();
+            const diff = endTime - now;
+
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('timer').innerHTML = 
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+            setTimeout(updateTimer, 1000);
+        }
+        updateTimer();
+
+        // Animazione Caricamento Immagini
+        document.querySelectorAll('img').forEach(img => {
+            img.style.opacity = '0';
+            setTimeout(() => {
+                img.style.transition = 'opacity 0.5s ease';
+                img.style.opacity = '1';
+            }, 500);
         });
     </script>
 </body>
