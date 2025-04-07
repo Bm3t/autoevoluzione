@@ -5,98 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EvolutionAuto | Spoiler 2025 </title>
     <style>
-
-      .before-after img {
-        max-width: 100%; /* Modificato da width: 100% */
-        border-radius: 8px;
-        border: 1px solid #333;
-        height: auto; /* Mantiene le proporzioni */
-    }
-
-    @media (max-width: 768px) {
-        /* Unico blocco media query consolidato */
-        body {
-            zoom: 0.9;
-        }
-
-        .before-after {
-            grid-template-columns: 1fr;
-            gap: 0.5rem;
-        }
-
-        .before-after img {
-            max-width: 85% !important; /* Riduzione più marcata */
-            margin: 0.5rem auto !important;
-        }
-
-        /* ... Resto delle regole mobile ... */
-    }
-
-    @media (min-width: 769px) {
-        .before-after img {
-            max-width: 450px; /* Dimensione fissa per desktop */
-        }
-    }
-    @media (max-width: 768px) {
-        body {
-            zoom: 0.9; /* Riduce leggermente tutto il contenuto visualizzando da smartphone*/
-        }
-
-        h1 {
-            font-size: 1.6rem !important;
-            margin: 0.8rem 0;
-        }
-
-        h2 {
-            font-size: 1.2rem !important;
-            margin: 0.6rem 0;
-        }
-
-        .container {
-            padding: 0.5rem !important;
-        }
-
-        .car-selector,
-        .kit-container {
-            padding: 1rem !important;
-            margin: 1rem 0 !important;
-        }
-
-        .before-after img {
-            max-width: 95%;
-            margin: 0.5rem auto !important;
-        }
-
-        .cta-button {
-            font-size: 1rem !important;
-            padding: 1rem 0.8rem !important;
-            margin: 0.8rem 0.3rem !important;
-        }
-
-        .urgency-badge {
-            font-size: 0.7rem !important;
-            padding: 0.4rem 0.8rem !important;
-        }
-
-        select {
-            font-size: 1rem !important;
-            padding: 0.8rem !important;
-        }
-
-        .logo {
-            width: 50px;
-            height: 50px;
-            margin: 1rem auto;
-        }
-    }
-
-    /* Mantieni queste regole per desktop */
-    @media (min-width: 769px) {
-        .before-after img {
-            max-width: 450px;
-        }
-    }
-        
+        /* ========= VARIABILI GLOBALI ========= */
         :root {
             --primary: #FFD700;
             --dark: #121212;
@@ -105,6 +14,7 @@
             --transition: all 0.3s ease;
         }
 
+        /* ========= STILI BASE ========= */
         body {
             font-family: 'Arial', sans-serif;
             background: var(--dark);
@@ -120,6 +30,7 @@
             padding: 2rem;
         }
 
+        /* ========= HEADER ========= */
         header {
             text-align: center;
             margin-bottom: 3rem;
@@ -144,6 +55,7 @@
             box-shadow: 0 0 35px rgba(255,215,0,0.4);
         }
 
+        /* ========= COMPONENTI ========= */
         .urgency-badge {
             background: linear-gradient(45deg, #D32F2F, #B71C1C);
             color: white;
@@ -173,6 +85,7 @@
             margin: 1rem 0;
         }
 
+        /* ========= SEZIONI KIT ========= */
         .kit-container {
             display: none;
             background: var(--secondary-bg);
@@ -187,6 +100,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* ========= GALLERIA PRIMA/DOPO ========= */
         .before-after {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -195,11 +109,14 @@
         }
 
         .before-after img {
-            width: 100%;
+            max-width: 100%; /* Utilizza max-width invece di width */
+            height: auto; /* Mantiene le proporzioni */
             border-radius: 8px;
             border: 1px solid #333;
+            display: block; /* Necessario per margin auto */
         }
 
+        /* ========= PULSANTE CTA ========= */
         .cta-button {
             display: inline-block;
             background: linear-gradient(45deg, #FFD700, #FFC107);
@@ -219,62 +136,76 @@
             box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
         }
 
-        h1, h2 {
-            line-height: 1.2 !important;
-            margin: 1rem 0;
-        }
-
-        .payment-info {
-            font-size: 0.9rem;
-            margin: 1.5rem 0;
-        }
-
+        /* ========= MEDIA QUERIES MOBILE ========= */
         @media (max-width: 768px) {
-            .container {
-                padding: 0.5rem;
+            body {
+                zoom: 0.9; /* Riduzione generale del contenuto */
             }
-            
+
+            .container {
+                padding: 0.5rem !important;
+            }
+
+            /* Ottimizzazione immagini */
             .before-after {
                 grid-template-columns: 1fr;
-            }
-
-            h1 {
-                font-size: 1.8rem !important;
-            }
-
-            h2 {
-                font-size: 1.4rem !important;
-            }
-
-            select {
-                font-size: 1.1rem;
-                padding: 1.2rem;
-            }
-
-            .urgency-badge {
-                font-size: 0.8rem;
-                padding: 0.5rem 1rem;
-                margin: 0.5rem 0;
-            }
-
-            .cta-button {
-                padding: 1.5rem 1rem !important;
-                margin: 1rem 0.5rem;
-                width: calc(100% - 1rem);
-            }
-
-            .kit-container {
-                padding: 1.5rem 1rem !important;
-                margin: 1rem 0.5rem !important;
+                gap: 0.5rem;
             }
 
             .before-after img {
-                margin: 1rem 0;
+                max-width: 85% !important; /* Riduzione più marcata */
+                margin: 0.5rem auto !important;
+            }
+
+            /* Regolazioni testo */
+            h1 {
+                font-size: 1.6rem !important;
+                margin: 0.8rem 0;
+            }
+
+            h2 {
+                font-size: 1.2rem !important;
+                margin: 0.6rem 0;
+            }
+
+            /* Componenti adattivi */
+            .car-selector,
+            .kit-container {
+                padding: 1rem !important;
+                margin: 1rem 0 !important;
+            }
+
+            .cta-button {
+                padding: 1rem 0.8rem !important;
+                margin: 0.8rem 0.3rem !important;
+                width: calc(100% - 0.6rem);
+            }
+
+            .urgency-badge {
+                font-size: 0.7rem !important;
+                padding: 0.4rem 0.8rem !important;
+            }
+
+            select {
+                font-size: 1rem !important;
+                padding: 0.8rem !important;
+            }
+
+            .logo {
+                width: 50px;
+                height: 50px;
+                margin: 1rem auto;
+            }
+        }
+
+        /* ========= MEDIA QUERIES DESKTOP ========= */
+        @media (min-width: 769px) {
+            .before-after img {
+                max-width: 450px; /* Dimensione fissa per desktop */
             }
         }
     </style>
 </head>
-<body>
 <body>
     <div class="container">
         <header>
