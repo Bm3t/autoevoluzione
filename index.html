@@ -51,6 +51,7 @@
             transform: scale(1.05);
             box-shadow: 0 0 35px rgba(255,215,0,0.4);
         }
+
         .urgency-badge {
             background: linear-gradient(45deg, #D32F2F, #B71C1C);
             color: white;
@@ -81,7 +82,7 @@
         }
 
         .kit-container {
-            display: none; /* Nascondi inizialmente */
+            display: none;
             background: var(--secondary-bg);
             padding: 2rem;
             border-radius: 10px;
@@ -124,13 +125,59 @@
             box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
         }
 
+        /* CORREZIONI MOBILE */
+        h1, h2 {
+            line-height: 1.2 !important;
+            margin: 1rem 0;
+        }
+
+        .payment-info {
+            font-size: 0.9rem;
+            margin: 1.5rem 0;
+        }
+
         @media (max-width: 768px) {
             .container {
-                padding: 1rem;
+                padding: 0.5rem;
             }
             
             .before-after {
                 grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.8rem !important;
+            }
+
+            h2 {
+                font-size: 1.4rem !important;
+            }
+
+            select {
+                font-size: 1.1rem;
+                padding: 1.2rem;
+            }
+
+            .urgency-badge {
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+                margin: 0.5rem 0;
+            }
+
+            .cta-button {
+                padding: 1.5rem 2rem;
+                font-size: 1.1rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .kit-container {
+                padding: 1.5rem;
+                margin-top: 1rem;
+            }
+
+            .before-after img {
+                margin: 1rem 0;
             }
         }
     </style>
@@ -155,18 +202,18 @@
 
         <!-- Kit Universale -->
         <div id="universale-kit" class="kit-container">
-            <h1 style="line-height: 0.08;">Universal Evolution</h1>
-             <h2>lo spoiler universale pensato per adattarsi a tutte le auto </h2>
-            <a href="https://www.ebay.it/itm/356379922337" class="cta-button"> ACQUISTA ORA </a>
-            <p>Acquisto sicuro con Ebay</p>
+            <h1>Universal Evolution</h1>
+            <h2>Lo spoiler universale pensato per adattarsi a tutte le auto</h2>
+            <a href="https://www.ebay.it/itm/356379922337" class="cta-button">ACQUISTA ORA</a>
+            <p class="payment-info">Acquisto sicuro con Ebay</p>
         </div>
-    </div>
+
         <!-- Kit per Alfa Romeo Giulietta -->
         <div id="giulietta-kit" class="kit-container">
-            <h1 style="line-height: 1;">Alfa Romeo Giulietta</h1>
-             <h2 style="line-height: 1;">Vi presentiamo GEvo 1</h2>
-            <p> il nuovo rivoluzionario spoiler per alfa rometo Giulietta e Mito </p>
-              <div class="before-after" style="margin-top: 0.05px;">
+            <h1>Alfa Romeo Giulietta</h1>
+            <h2>Vi presentiamo GEvo 1</h2>
+            <p>Il nuovo rivoluzionario spoiler per Alfa Romeo Giulietta e Mito</p>
+            <div class="before-after">
                 <img src="giulietta_prima.png" alt="Prima">
                 <img src="giulietta_dopo.png" alt="Dopo">
             </div>
@@ -174,8 +221,8 @@
             <ul>
                 <li>✔️ ALFA ROMEO Giulietta/Mito</li>
             </ul>
-            <a href="https://www.ebay.it/itm/356746930256" class="cta-button"> ACQUISTA ORA </a>
-            <p>Acquisto sicuro con Ebay</p>
+            <a href="https://www.ebay.it/itm/356746930256" class="cta-button">ACQUISTA ORA</a>
+            <p class="payment-info">Acquisto sicuro con Ebay</p>
         </div>
     </div>
 
@@ -200,19 +247,15 @@
 
         // Gestione selezione auto
         document.getElementById('carModel').addEventListener('change', function() {
-            // Nascondi tutti i kit
             document.querySelectorAll('.kit-container').forEach(kit => {
                 kit.style.display = 'none';
             });
             
-            // Mostra solo il kit selezionato
             const selectedCar = this.value;
             if (selectedCar) {
                 const kitElement = document.getElementById(`${selectedCar}-kit`);
                 if (kitElement) {
                     kitElement.style.display = 'block';
-                    
-                    // Scrolla fino al kit
                     kitElement.scrollIntoView({ behavior: 'smooth' });
                 }
             }
