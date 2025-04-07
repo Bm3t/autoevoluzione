@@ -6,23 +6,35 @@
     <title>EvolutionAuto | Spoiler 2025 </title>
     <style>
 
-  /* Aggiungi questa regola alle media query esistenti */
+      .before-after img {
+        max-width: 100%; /* Modificato da width: 100% */
+        border-radius: 8px;
+        border: 1px solid #333;
+        height: auto; /* Mantiene le proporzioni */
+    }
+
     @media (max-width: 768px) {
-        .before-after img {
-            max-width: 90% !important; /* Riduci la larghezza al 90% */
-            margin: 0 auto !important; /* Centra le immagini */
-            display: block; /* Necessario per il margin auto */
+        /* Unico blocco media query consolidato */
+        body {
+            zoom: 0.9;
         }
 
         .before-after {
-            gap: 0.5rem !important; /* Riduci lo spazio tra le immagini */
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
         }
+
+        .before-after img {
+            max-width: 85% !important; /* Riduzione più marcata */
+            margin: 0.5rem auto !important;
+        }
+
+        /* ... Resto delle regole mobile ... */
     }
 
-    /* Mantieni dimensioni originali su desktop */
     @media (min-width: 769px) {
         .before-after img {
-            max-width: 100%;
+            max-width: 450px; /* Dimensione fissa per desktop */
         }
     }
     @media (max-width: 768px) {
