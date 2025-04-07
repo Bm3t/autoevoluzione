@@ -125,6 +125,26 @@
             box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
         }
 
+        <style>
+    /* Aggiungi questa regola nel CSS esistente */
+    .cta-button {
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+        .cta-button {
+            padding: 1.5rem 1rem !important; /* Riduci il padding laterale */
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+        }
+        
+        .kit-container {
+            margin: 1rem 0.5rem !important; /* Aggiungi margini laterali */
+        }
+    }
+</style>
+
         /* CORREZIONI MOBILE */
         h1, h2 {
             line-height: 1.2 !important;
