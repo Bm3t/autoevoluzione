@@ -275,46 +275,17 @@
                 <img src="G1.jpeg" alt="Prima" style="opacity: 1; transition: opacity 0.5s;">
                 <img src="G2.jpeg" alt="Dopo" style="opacity: 1; transition: opacity 0.5s;">
             </div>
-<style>
-  .product-description {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 1.1rem;
-    color: #1a1a1a;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    line-height: 1.6;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease-out forwards;
-  }
-
-  .product-models {
-    list-style: none;
-    padding: 0;
-    margin-top: 10px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-  }
-
-  .product-models li {
-    margin-bottom: 5px;
-  }
-
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
-
-<div class="product-description">
-  Alettone sportivo <strong>GEvo 1</strong> è stato studiato per adattarsi alla perfezione a:
-  <ul class="product-models">
-    <li>ALFA ROMEO Giulietta</li>
-  </ul>
-</div>
+            <p>Alettone sportivo GEvo 1 è stato studiato per adattarsi alla perfeziona ad</p>
+            
+            <div style="text-align: center; margin-top: 1rem; margin-bottom: 1rem;">
+            <p style="font-size: 20px; font-weight: 500; color: #FFD700; text-shadow: 1px 1px 3px #000; margin: 0; animation: fadeInUp 1s ease;">
+                Alettone sportivo <strong style="color: #ffffff;">GEvo 1</strong><br>
+                progettato per integrarsi alla perfezione con
+            </p>
+            <p style="font-size: 24px; font-weight: bold; color: #FFCC00; text-shadow: 2px 2px 6px #000; margin: 0.5rem 0; animation: pulseText 2s infinite alternate;">
+                ALFA ROMEO Giulietta
+            </p>
+            </div>
 
             <p style="font-size: 28px; color: #ffcc00; text-shadow: 2px 2px 5px #000; font-weight: bold; animation: glow 1.5s infinite alternate; margin-bottom: 5px;">
             Oggi a solo 90€
@@ -323,6 +294,25 @@
             la metà del prezzo rispetto alla concorrenza
             </p>
                 <style>
+                @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                }
+
+                @keyframes pulseText {
+                0% {
+                    text-shadow: 2px 2px 5px #000;
+                }
+                100% {
+                    text-shadow: 2px 2px 15px #ffd700;
+                }
+                }
                 @keyframes glow {
                 from {
                     text-shadow: 2px 2px 5px #000;
