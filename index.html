@@ -1,14 +1,14 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EvolutionAuto | Spoiler 2025 – GEvo1 & Universale</title>
-  <meta name="description" content="Spoiler 2025 per Alfa Romeo Giulietta (GEvo1) e spoiler universale. Qualità, stile e prezzo imbattibile. Richiedi disponibilità su Telegram o Email." />
+  <meta name="description" content="Spoiler 2025 per Alfa Romeo Giulietta (GEvo1) e spoiler universale. Qualità, stile e prezzo imbattibile. Acquisto e chat su Subito.it, assistenza via email." />
 
   <!-- Open Graph / Social -->
   <meta property="og:title" content="EvolutionAuto | Spoiler 2025 – GEvo1 & Universale" />
-  <meta property="og:description" content="Eleva lo stile della tua auto. Prima/Dopo, prezzo lancio, spedizioni rapide. Richiedi ora su Telegram." />
+  <meta property="og:description" content="Eleva lo stile della tua auto. Prima/Dopo, prezzo lancio, spedizioni rapide. Acquisto e chat su Subito.it." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/img/og-image.jpg" />
   <meta property="og:locale" content="it_IT" />
@@ -29,44 +29,55 @@
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif;background:linear-gradient(180deg,var(--dark),#0F0F12);color:var(--light);line-height:1.6;-webkit-font-smoothing:antialiased}
     img{max-width:100%;display:block}
     a{color:inherit;text-decoration:none}
+    button{font:inherit}
 
     /* ===================== LAYOUT ===================== */
     .container{max-width:var(--container);margin-inline:auto;padding:12px 16px}
     .stack>*{margin:0}.stack>*+*{margin-top:var(--space)}
 
-    header.site-header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(1.2) blur(8px);background:rgba(15,15,18,.68);border-bottom:1px solid rgba(255,255,255,.06)}
+    header.site-header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(1.2) blur(8px);background:rgba(15,15,18,.78);border-bottom:1px solid rgba(255,255,255,.06)}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 8px}
     .brand{display:flex;align-items:center;gap:10px}
     .brand img{width:40px;height:40px;border-radius:999px;border:2px solid var(--primary);box-shadow:0 0 14px rgba(255,215,0,.25)}
     .brand strong{font-weight:700;letter-spacing:.2px}
 
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.9rem 1.1rem;border-radius:12px;font-weight:700;border:1px solid rgba(255,255,255,.12);background:#1A1A1E;transition:var(--t)}
+    .nav-cta{display:flex;gap:10px;align-items:center}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.85rem 1.05rem;border-radius:12px;font-weight:700;border:1px solid rgba(255,255,255,.12);background:#1A1A1E;transition:var(--t)}
     .btn:hover{transform:translateY(-2px);box-shadow:var(--sh)}
     .btn.primary{background:linear-gradient(45deg,var(--primary),#FFC107);color:#111;border:none}
     .btn.ghost{background:transparent}
     .btn.market{background:linear-gradient(45deg,var(--market),var(--market-2));color:#111;border:none}
     .btn.block{width:100%}
+    .btn.small{padding:.55rem .8rem;border-radius:10px;font-weight:800}
 
     /* ===================== HERO ===================== */
-    .hero{padding:28px 0 6px}
+    .hero{padding:26px 0 6px}
     .badge{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(90deg,#B71C1C,#D32F2F);padding:.45rem .85rem;border-radius:999px;font-size:.9rem}
     .countdown{font-variant-numeric:tabular-nums;font-weight:800}
     h1{font-size:clamp(26px,7vw,38px);line-height:1.15;margin:10px 0;text-align:center}
     .lead{color:#DADADA;max-width:52ch;margin-inline:auto;text-align:center}
 
-    /* Box informativo sempre sotto l'hero (una colonna) */
+    /* Trust microcopy (Subito) */
+    .trust{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-top:10px;color:#D7D7D7;font-size:.95rem}
+    .trust .pill{display:inline-flex;align-items:center;gap:.45rem;padding:.3rem .6rem;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+
+    /* ===================== SELECTOR (super in evidenza) ===================== */
+    .selector{margin-top:18px;padding:16px;border-radius:var(--r);background:linear-gradient(180deg,#141418,#121216);border:1px solid rgba(255,255,255,.18);text-align:center;box-shadow:var(--ring),var(--sh)}
+    .selector header{margin-bottom:10px}
+    .selector header small{display:block;color:#CFCFCF}
+    .selector label{display:block;margin:6px 0 8px;color:#EDEDED;font-weight:800;letter-spacing:.2px}
+    select{width:100%;appearance:none;background:#1B1B20;color:var(--light);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,.22);font-weight:700}
+    .selector .hint{font-size:.9rem;color:#CFCFCF;margin-top:8px}
+    .quick-pills{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+    .quick-pills .btn{font-weight:800}
+
+    /* Box informativo */
     .panel{background:linear-gradient(180deg,#141418,#111115);border:1px solid rgba(255,255,255,.06);border-radius:var(--r);padding:16px}
     .panel h3{text-align:center;margin:0 0 6px}
     .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
     .kpi{background:#0E0E11;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:10px;text-align:center}
     .kpi strong{display:block;font-size:1.2rem}
-
-    /* ===================== SELECTOR (ora in HERO) ===================== */
-    .selector{margin-top:18px;padding:16px;border-radius:var(--r);background:linear-gradient(180deg,#141418,#121216);border:1px solid rgba(255,255,255,.12);text-align:center}
-    .selector label{display:block;margin-bottom:8px;color:var(--muted)}
-    select{width:100%;appearance:none;background:#1B1B20;color:var(--light);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.18)}
-    .hero .selector{box-shadow:var(--ring),var(--sh);border-color:rgba(255,255,255,.2)}
-    .selector .hint{font-size:.9rem;color:#CFCFCF;margin-top:8px}
 
     /* ===================== PRODOTTO ===================== */
     section.product{display:none;margin-top:18px;padding:18px;border-radius:var(--r);background:linear-gradient(180deg,#15151A,#121217);border:1px solid rgba(255,255,255,.07)}
@@ -96,10 +107,11 @@
     .cta-note{color:#c9c9c9;font-size:.9rem;margin-top:6px;text-align:center}
     .market-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,77,79,.15);border:1px solid rgba(255,122,69,.35);color:#FFD3D3;padding:.25rem .6rem;border-radius:999px;font-size:.85rem}
 
-    /* ===================== CTA SWAP (nuova sezione dove prima c'era il selettore) ===================== */
-    .cta-swap{margin-top:18px;padding:16px;border-radius:var(--r);background:linear-gradient(180deg,#141418,#121216);border:1px solid rgba(255,255,255,.08)}
-    .cta-swap .cta-row{grid-template-columns:1fr 1fr}
-    .cta-swap h3{margin:0 0 6px;text-align:center}
+    /* ===================== ACQUISTO / CONTATTI (sostituisce vecchia CTA telegram) ===================== */
+    .acquisto{margin-top:18px;padding:16px;border-radius:var(--r);background:linear-gradient(180deg,#141418,#121216);border:1px solid rgba(255,255,255,.08)}
+    .acquisto h3{margin:0 0 6px;text-align:center}
+    .acquisto .cta-row{grid-template-columns:1fr 1fr}
+    .acquisto small{display:block;text-align:center;color:#CFCFCF;margin-top:8px}
 
     /* ===================== BENEFITS / REVIEWS / FAQ ===================== */
     .benefits{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:24px 0}
@@ -127,7 +139,9 @@
     @media (max-width: 620px){
       .kpis{grid-template-columns:1fr 1fr}
       .benefits{grid-template-columns:1fr}
-      .cta-swap .cta-row{grid-template-columns:1fr}
+      .acquisto .cta-row{grid-template-columns:1fr}
+      /* header: mostra un solo bottone piccolo */
+      .btn.small.hide-sm{display:none}
     }
     @media (min-width: 980px){
       :root{--container:920px}
@@ -147,8 +161,8 @@
         <strong>EvolutionAuto</strong>
       </a>
       <div class="nav-cta">
-        <a class="btn ghost" href="#selector">Seleziona modello</a>
-        <a class="btn primary" href="https://t.me/evolutionw" target="_blank" rel="noopener">Richiedi su Telegram</a>
+        <!-- Un solo bottone compatto per mobile -->
+        <a class="btn ghost small" href="#selector">Seleziona modello</a>
       </div>
     </nav>
   </header>
@@ -158,50 +172,63 @@
     <section class="hero stack" aria-labelledby="hero-title">
       <span class="badge" aria-live="polite">⚡ Offerta termina tra <span id="countdown" class="countdown">--:--:--</span></span>
       <h1 id="hero-title">L'evoluzione del tuning è qui</h1>
-      <p class="lead">Per tutti un'unica soluzione: <strong>Universal Revolution</strong> lo spoiler per tutte le auto. Design studiato, montaggio semplice, impatto estetico immediato.</p>
+      <p class="lead">Per tutti un'unica soluzione: <strong>Universal Revolution</strong> e <strong>GEvo1 per Giulietta</strong>. Design studiato, montaggio semplice, impatto estetico immediato.</p>
 
-      <!-- KPI primi piani -->
+      <div class="trust">
+        <span class="pill">🛡️ Checkout & chat su <strong>Subito.it</strong></span>
+        <span class="pill">📦 Spedizione tracciata</span>
+      </div>
+
+      <!-- KPI -->
       <div class="kpis" aria-hidden="false">
         <div class="kpi"><strong>90€</strong><span>GEvo1 Giulietta</span></div>
         <div class="kpi"><strong>50€</strong><span>Universal Revolution</span></div>
         <div class="kpi"><strong>48h</strong><span>Pronto evasione*</span></div>
       </div>
-      <p class="foot-note" style="margin-top:4px;text-align:center">*Acquisto facile e veloce tramite contatto in chat su Subito.it</p>
+      <p class="foot-note" style="margin-top:4px;text-align:center">*Acquisto e messaggistica su Subito.it</p>
 
-      <!-- ===================== SELECTOR spostato nel HERO ===================== -->
+      <!-- ===================== SELECTOR super visibile ===================== -->
       <section id="selector" class="selector" aria-labelledby="select-title">
-        <label id="select-title" for="carModel"><strong>1. Scegli il modello</strong></label>
+        <header>
+          <small>Passo 1</small>
+          <label id="select-title" for="carModel"><strong>Scegli il modello</strong></label>
+        </header>
         <select id="carModel" name="car-model" aria-controls="universale-kit giulietta-kit" aria-label="Seleziona il tuo modello di auto">
           <option value="">— Seleziona —</option>
           <option value="universale">Universale</option>
           <option value="giulietta">Alfa Romeo Giulietta</option>
         </select>
-        <p class="hint">Dopo la scelta scorri in automatico alla scheda prodotto.</p>
+        <div class="quick-pills" aria-label="Scelta rapida">
+          <button class="btn" data-model="universale">Universale</button>
+          <button class="btn" data-model="giulietta">Giulietta</button>
+        </div>
+        <p class="hint">Dopo la scelta ti portiamo alla scheda prodotto e al relativo annuncio su Subito.</p>
       </section>
 
-      <!-- Box motivazionale, sempre sotto -->
+      <!-- Box motivazionale -->
       <aside class="panel stack" aria-label="Info rapida prodotto">
         <h3 style="margin:0 0 6px">Perché scegliere EvolutionAuto</h3>
         <ul style="margin:0;padding-left:18px;color:#D7D7D7">
           <li>Progettazione 2025 con finitura <strong>nero lucido</strong>.</li>
           <li>Modelli dedicati (Giulietta) e <strong>universale</strong>.</li>
-          <li>Prezzo <strong>metà della concorrenza</strong> mantenendo qualità.</li>
+          <li>Prezzi <strong>competitivi</strong> mantenendo qualità.</li>
         </ul>
         <div class="kpis">
           <div class="kpi"><strong>1000+</strong><span>Clienti soddisfatti</span></div>
           <div class="kpi"><strong>4.8★</strong><span>Valutazione media</span></div>
-          <div class="kpi"><strong>Supporto</strong><span>Telegram & Email</span></div>
+          <div class="kpi"><strong>Supporto</strong><span>Email dedicata</span></div>
         </div>
       </aside>
     </section>
 
-    <!-- ===================== CTA PRINCIPALI (al posto del selettore) ===================== -->
-    <section class="cta-swap" aria-label="Contatti rapidi">
-      <h3>Contattaci ora</h3>
+    <!-- ===================== ACQUISTO / CONTATTI ===================== -->
+    <section class="acquisto" aria-label="Acquista o contattaci">
+      <h3>Apri subito l'annuncio su Subito</h3>
       <div class="cta-row">
-        <a class="btn primary block" href="https://t.me/evolutionw" target="_blank" rel="noopener">Richiedi disponibilità</a>
-        <a class="btn block" href="mailto:auto.evoluzionewow@gmail.com">Scrivici via Email</a>
+        <a class="btn market block" href="https://www.subito.it/accessori-auto/spoiler-alettone-sportivo-universale-palermo-613515690.htm?utm_medium=referral&utm_source=subito&utm_campaign=free-engagement-myads" target="_blank" rel="noopener nofollow sponsored" aria-label="Vedi annuncio Universal Evolution su Subito">Universale su Subito</a>
+        <a class="btn market block" href="https://www.subito.it/accessori-auto/spoiler-sportivo-nero-lucido-giulietta-palermo-613610032.htm?utm_medium=referral&utm_source=subito&utm_campaign=free-engagement-myads" target="_blank" rel="noopener nofollow sponsored" aria-label="Vedi annuncio GEvo1 Giulietta su Subito">Giulietta su Subito</a>
       </div>
+      <small>Oppure scrivici: <a href="mailto:auto.evoluzionewow@gmail.com">auto.evoluzionewow@gmail.com</a></small>
     </section>
 
     <!-- ===================== UNIVERSALE ===================== -->
@@ -230,10 +257,9 @@
         <!-- Contenuti -->
         <div class="stack">
           <div class="price"><span class="now">50€</span><span class="tag">Prezzo lancio</span></div>
-          <p class="compare">Prezzo <strong>2× più basso</strong> della concorrenza, con finitura nero lucido.</p>
+          <p class="compare">Prezzo competitivo con finitura nero lucido.</p>
           <div class="cta-row">
             <a id="cta-universale-subito" class="btn market block" href="https://www.subito.it/accessori-auto/spoiler-alettone-sportivo-universale-palermo-613515690.htm?utm_medium=referral&utm_source=subito&utm_campaign=free-engagement-myads" target="_blank" rel="noopener nofollow sponsored" aria-label="Vedi annuncio Universal Evolution su Subito">Vedi su Subito</a>
-            <a class="btn block" href="https://t.me/evolutionw" target="_blank" rel="noopener">Richiedi su Telegram</a>
             <a class="btn block" href="mailto:auto.evoluzionewow@gmail.com">Richiedi via Email</a>
           </div>
           <p class="cta-note">Pagamento e spedizione gestiti su Subito.</p>
@@ -266,11 +292,10 @@
         </div>
         <!-- Contenuti -->
         <div class="stack">
-          <div class="price"><span class="now">90€</span><span class="tag">Metà del prezzo medio</span></div>
+          <div class="price"><span class="now">90€</span><span class="tag">Prezzo competitivo</span></div>
           <p class="compare">Design dedicato, look aggressivo e <strong>montaggio semplice</strong>.</p>
           <div class="cta-row">
             <a id="cta-giulietta-subito" class="btn market block" href="https://www.subito.it/accessori-auto/spoiler-sportivo-nero-lucido-giulietta-palermo-613610032.htm?utm_medium=referral&utm_source=subito&utm_campaign=free-engagement-myads" target="_blank" rel="noopener nofollow sponsored" aria-label="Vedi annuncio GEvo1 per Giulietta su Subito">Vedi su Subito</a>
-            <a class="btn block" href="https://t.me/evolutionw" target="_blank" rel="noopener">Richiedi su Telegram</a>
             <a class="btn block" href="mailto:auto.evoluzionewow@gmail.com">Richiedi via Email</a>
           </div>
           <p class="cta-note">Pagamento e spedizione gestiti su Subito.</p>
@@ -281,7 +306,7 @@
     <!-- ===================== BENEFITS / TRUST ===================== -->
     <section class="benefits" aria-label="Vantaggi">
       <div class="benefit"><strong>Finitura premium</strong><span>Vernice nero lucido con controllo qualità.</span></div>
-      <div class="benefit"><strong>Assistenza rapida</strong><span>Supporto Telegram ed Email, risposta in giornata.</span></div>
+      <div class="benefit"><strong>Assistenza rapida</strong><span>Supporto via email dedicata.</span></div>
       <div class="benefit"><strong>Spedizione tracciata</strong><span>Packaging rinforzato e tracking incluso.</span></div>
     </section>
 
@@ -304,7 +329,7 @@
       </details>
       <details>
         <summary>Tempi e costi di spedizione?</summary>
-        <p>Evadiamo in 24–48h lavorative quando disponibile; costi e tempi variano per zona. Conferma sempre su Telegram prima dell’ordine.</p>
+        <p>Evadiamo in 24–48h lavorative quando disponibile; costi e tempi variano per zona. Conferma sull'annuncio Subito e, se serve, scrivici via email.</p>
       </details>
     </section>
   </main>
@@ -337,11 +362,11 @@
     </div>
   </footer>
 
-  <!-- ===================== STICKY CTA (sempre visibile) ===================== -->
+  <!-- ===================== STICKY CTA (mobile) ===================== -->
   <div class="sticky-bar" aria-hidden="false">
     <div class="sticky-inner">
       <a class="btn market" id="cta-sticky-market" href="#selector" target="_self" aria-label="Scegli un modello e acquista su Subito">Acquista su Subito</a>
-      <a class="btn" href="https://t.me/evolutionw" target="_blank" rel="noopener">Telegram</a>
+      <a class="btn" href="mailto:auto.evoluzionewow@gmail.com">Email</a>
     </div>
   </div>
 
@@ -376,6 +401,14 @@
     }
     select.addEventListener('change',e=>showSection(e.target.value));
 
+    // Quick pills
+    document.querySelectorAll('.quick-pills .btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const model=btn.dataset.model;
+        select.value=model;showSection(model);
+      });
+    });
+
     // Fade-in images on load + reduced motion respect
     const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if(!prefersReduced){
@@ -402,8 +435,8 @@
         stickyMarket.href = LINKS[model];
         stickyMarket.target = '_blank';
         stickyMarket.rel = 'noopener nofollow sponsored';
-        stickyMarket.setAttribute('aria-label',`Acquista ${model==='giulietta' ? 'GEvo1 per Giulietta' : 'Universal Evolution'} su Subito`);
-        stickyMarket.textContent = 'Acquista su Subito';
+        stickyMarket.setAttribute('aria-label',`Apri annuncio ${model==='giulietta' ? 'GEvo1 per Giulietta' : 'Universal Evolution'} su Subito`);
+        stickyMarket.textContent = 'Apri su Subito';
       } else {
         stickyMarket.href = '#selector';
         stickyMarket.target = '_self';
