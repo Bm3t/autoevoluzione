@@ -10,10 +10,10 @@
   <meta property="og:title" content="EvolutionAuto | Spoiler 2025 – GEvo1 & Universale" />
   <meta property="og:description" content="Eleva lo stile della tua auto. Prima/Dopo, prezzo lancio, spedizioni rapide. Acquisto e chat su Subito.it." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/img/og-image.jpg" />
+  <meta property="og:image" content="G2.jpeg" />
   <meta property="og:locale" content="it_IT" />
 
-  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" href="favicon.ico" />
   <style>
     /* ===================== TOKENS ===================== */
     :root{
@@ -40,12 +40,9 @@
     .brand img{width:40px;height:40px;border-radius:999px;border:2px solid var(--primary);box-shadow:0 0 14px rgba(255,215,0,.25)}
     .brand strong{font-weight:700;letter-spacing:.2px}
 
-    .nav-cta{display:flex;gap:10px;align-items:center}
-
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.85rem 1.05rem;border-radius:12px;font-weight:700;border:1px solid rgba(255,255,255,.12);background:#1A1A1E;transition:var(--t)}
     .btn:hover{transform:translateY(-2px);box-shadow:var(--sh)}
     .btn.primary{background:linear-gradient(45deg,var(--primary),#FFC107);color:#111;border:none}
-    .btn.ghost{background:transparent}
     .btn.market{background:linear-gradient(45deg,var(--market),var(--market-2));color:#111;border:none}
     .btn.block{width:100%}
     .btn.small{padding:.55rem .8rem;border-radius:10px;font-weight:800}
@@ -57,10 +54,7 @@
     h1{font-size:clamp(26px,7vw,38px);line-height:1.15;margin:10px 0;text-align:center}
     .lead{color:#DADADA;max-width:52ch;margin-inline:auto;text-align:center}
 
-    /* ===================== (REMOVED) QUADRATI KPI IN HERO ===================== */
-    /* CHANGES: rimossi i riquadri dalla hero come richiesto */
-
-    /* ===================== SELECTOR SUPER EVIDENZA ===================== */
+    /* ===================== SELECTOR ===================== */
     .selector{margin-top:14px;padding:16px;border-radius:var(--r);background:linear-gradient(180deg,#141418,#121216);border:1px solid rgba(255,255,255,.18);text-align:center;box-shadow:var(--ring),var(--sh);position:relative;animation:pulseRing 2.4s ease-in-out infinite}
     .selector header{margin-bottom:10px}
     .selector header small{display:block;color:#CFCFCF}
@@ -75,7 +69,6 @@
     .panel h3{text-align:center;margin:0 0 6px}
 
     /* ===================== MINI KPI “PERCHÉ SCEGLIERE” ===================== */
-    /* CHANGES: nuovi 3 riquadri compatti in un’unica riga su mobile */
     .kpi-why{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -173,7 +166,8 @@
   <header class="site-header" role="banner">
     <nav class="nav container" aria-label="Principale">
       <a href="#top" class="brand">
-        <img src="./EvolutionAuto _ Spoiler 2025_files/logo.jpg" alt="Logo EvolutionAuto" loading="eager" decoding="async" />
+        <!-- logo corretto -->
+        <img src="logo.jpg" alt="Logo EvolutionAuto" loading="eager" decoding="async" />
         <strong>EvolutionAuto</strong>
       </a>
     </nav>
@@ -186,10 +180,7 @@
       <h1 id="hero-title">L'evoluzione del tuning è qui</h1>
       <p class="lead">Per tutti un'unica soluzione: <strong>Universal Revolution</strong> e <strong>GEvo1 per Giulietta</strong>. Design studiato, montaggio semplice, impatto estetico immediato.</p>
 
-      <!-- CHANGES: RIMOSSI i vecchi riquadri KPI dalla hero e la relativa nota -->
-      <!-- (niente .kpi-row, niente .kpi-note qui) -->
-
-      <!-- ===================== SELECTOR super visibile ===================== -->
+      <!-- ===================== SELECTOR ===================== -->
       <section id="selector" class="selector" aria-labelledby="select-title">
         <header>
           <small>Passo 1</small>
@@ -203,7 +194,7 @@
         <p class="hint">Dopo la scelta ti portiamo alla scheda prodotto e al relativo annuncio su Subito.</p>
       </section>
 
-      <!-- Box motivazionale compatto -->
+      <!-- ===================== PERCHÉ SCEGLIERE (3 riquadri) ===================== -->
       <aside class="panel stack" aria-label="Info rapida prodotto">
         <h3 style="margin:0 0 6px">Perché scegliere EvolutionAuto</h3>
         <ul style="margin:0;padding-left:18px;color:#D7D7D7">
@@ -211,21 +202,15 @@
           <li>Modelli dedicati (Giulietta) e <strong>universale</strong>.</li>
           <li>Prezzi <strong>competitivi</strong> mantenendo qualità.</li>
         </ul>
-
-        <!-- CHANGES: sostituita la vecchia .trust con i 3 riquadri compatti -->
         <div class="kpi-why" aria-label="Indicatori chiave di affidabilità">
           <div class="sq-mini" aria-label="Spedizione tracciata">
-            <span class="ic">📦</span>
-            <strong>Sped. tracciata</strong>
+            <span class="ic">📦</span><strong>Sped. tracciata</strong>
           </div>
           <div class="sq-mini" aria-label="Valutazione media 4.8 stelle">
-            <strong>4.8★</strong>
-            <span>Valutazione media</span>
+            <strong>4.8★</strong><span>Valutazione media</span>
           </div>
           <div class="sq-mini" aria-label="Supporto Subito ed Email">
-            <span class="ic">💬</span>
-            <strong>Supporto</strong>
-            <span>Subito / Email</span>
+            <span class="ic">💬</span><strong>Supporto</strong><span>Subito / Email</span>
           </div>
         </div>
       </aside>
@@ -252,16 +237,17 @@
       <div class="product-grid">
         <!-- Media -->
         <div class="media">
+          <!-- immagini corrette dal repo -->
           <div class="ba" aria-label="Prima e dopo – Universal Evolution">
-            <img src="./EvolutionAuto _ Spoiler 2025_files/U2.PNG" alt="Dopo" loading="lazy" decoding="async">
+            <img src="U2.PNG" alt="Dopo" loading="lazy" decoding="async">
             <div class="handle" aria-hidden="true"></div>
             <input type="range" min="0" max="100" value="50" aria-label="Regola confronto" />
-            <img class="top" src="./EvolutionAuto _ Spoiler 2025_files/U1.PNG" alt="Prima" loading="lazy" decoding="async">
+            <img class="top" src="U1.PNG" alt="Prima" loading="lazy" decoding="async">
           </div>
           <div class="thumbs" aria-label="Galleria Universal Evolution">
-            <img src="./EvolutionAuto _ Spoiler 2025_files/U4.PNG" alt="Dettaglio spoiler universale" loading="lazy" decoding="async">
-            <img src="./EvolutionAuto _ Spoiler 2025_files/U3.PNG" alt="Vista posteriore montato" loading="lazy" decoding="async">
-            <img src="./EvolutionAuto _ Spoiler 2025_files/U2.PNG" alt="Vista dall'alto" loading="lazy" decoding="async">
+            <img src="U4.PNG" alt="Dettaglio spoiler universale" loading="lazy" decoding="async">
+            <img src="U3.PNG" alt="Vista posteriore montato" loading="lazy" decoding="async">
+            <img src="U2.PNG" alt="Vista dall'alto" loading="lazy" decoding="async">
           </div>
         </div>
         <!-- Contenuti -->
@@ -288,16 +274,17 @@
       <div class="product-grid">
         <!-- Media -->
         <div class="media">
+          <!-- immagini corrette dal repo -->
           <div class="ba" aria-label="Prima e dopo – GEvo1 Giulietta">
-            <img src="./EvolutionAuto _ Spoiler 2025_files/G2.jpeg" alt="Dopo" loading="lazy" decoding="async">
+            <img src="G2.jpeg" alt="Dopo" loading="lazy" decoding="async">
             <div class="handle" aria-hidden="true"></div>
             <input type="range" min="0" max="100" value="50" aria-label="Regola confronto" />
-            <img class="top" src="./EvolutionAuto _ Spoiler 2025_files/G1.jpeg" alt="Prima" loading="lazy" decoding="async">
+            <img class="top" src="G1.jpeg" alt="Prima" loading="lazy" decoding="async">
           </div>
           <div class="thumbs" aria-label="Galleria GEvo1">
-            <img src="./EvolutionAuto _ Spoiler 2025_files/G4.jpeg" alt="Dettaglio GEvo1" loading="lazy" decoding="async">
-            <img src="./EvolutionAuto _ Spoiler 2025_files/G5.jpeg" alt="Vista laterale GEvo1" loading="lazy" decoding="async">
-            <img src="./EvolutionAuto _ Spoiler 2025_files/G6.JPG" alt="Vista posteriore GEvo1" loading="lazy" decoding="async">
+            <img src="G4.jpeg" alt="Dettaglio GEvo1" loading="lazy" decoding="async">
+            <img src="G5.jpeg" alt="Vista laterale GEvo1" loading="lazy" decoding="async">
+            <img src="G6.JPG" alt="Vista posteriore GEvo1" loading="lazy" decoding="async">
           </div>
         </div>
         <!-- Contenuti -->
@@ -364,7 +351,7 @@
       <div>
         <strong>Legale</strong>
         <ul style="list-style:none;padding:0;margin:8px 0 0">
-          <li><a href="#" aria-disabled="true">Termini & Condizioni</a></li>
+          <li><a href="#" aria-disabled="true">Termini &amp; Condizioni</a></li>
           <li><a href="#" aria-disabled="true">Privacy</a></li>
           <li><a href="#" aria-disabled="true">Resi</a></li>
         </ul>
@@ -457,7 +444,7 @@
     "@type":"Product",
     "name":"GEvo1 – Spoiler per Alfa Romeo Giulietta",
     "brand":{"@type":"Brand","name":"EvolutionAuto"},
-    "image":["./EvolutionAuto _ Spoiler 2025_files/G2.jpeg","./EvolutionAuto _ Spoiler 2025_files/G5.jpeg"],
+    "image":["G2.jpeg","G5.jpeg"],
     "description":"Spoiler 2025 dedicato a Alfa Romeo Giulietta con finitura nero lucido.",
     "offers":{
       "@type":"Offer",
@@ -474,7 +461,7 @@
     "@type":"Product",
     "name":"Universal Evolution – Spoiler Universale",
     "brand":{"@type":"Brand","name":"EvolutionAuto"},
-    "image":["./EvolutionAuto _ Spoiler 2025_files/U2.PNG","./EvolutionAuto _ Spoiler 2025_files/U3.PNG"],
+    "image":["U2.PNG","U3.PNG"],
     "description":"Spoiler universale nero lucido adatto alla maggior parte delle auto.",
     "offers":{
       "@type":"Offer",
