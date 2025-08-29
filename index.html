@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="utf-8" />
@@ -69,31 +69,12 @@
     .panel h3{text-align:center;margin:0 0 6px}
 
     /* ===================== MINI KPI “PERCHÉ SCEGLIERE” ===================== */
-    .kpi-why{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:10px;
-      margin-top:10px;
-    }
-    .sq-mini{
-      background:#0E0E11;
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:12px;
-      padding:10px 8px;
-      text-align:center;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      min-height:64px;
-      line-height:1.1;
-    }
+    .kpi-why{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+    .sq-mini{background:#0E0E11;border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:10px 8px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:64px;line-height:1.1}
     .sq-mini strong{font-size:clamp(.9rem,3.2vw,1rem);font-weight:900}
     .sq-mini span{font-size:clamp(.72rem,2.8vw,.85rem);color:#CFCFCF;margin-top:3px}
     .sq-mini .ic{font-size:1.05rem;opacity:.95;margin-bottom:4px}
-    @media(min-width:980px){
-      .sq-mini{min-height:72px}
-    }
+    @media(min-width:980px){.sq-mini{min-height:72px}}
 
     /* ===================== PRODOTTO ===================== */
     section.product{display:none;margin-top:18px;padding:18px;border-radius:var(--r);background:linear-gradient(180deg,#15151A,#121217);border:1px solid rgba(255,255,255,.07)}
@@ -103,16 +84,24 @@
     .subtitle{color:#CFCFCF;margin:2px 0 8px}
     .product-grid{display:grid;grid-template-columns:1fr;gap:14px;align-items:start}
 
-    /* Media (prima/dopo + thumbs) */
+    /* ===================== MEDIA – Slider prima/dopo (mobile friendly) ===================== */
     .media{display:grid;grid-template-rows:auto auto;gap:10px}
-    .ba{position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.08);aspect-ratio:16/9;background:#0D0D10}
-    .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-    .ba .top{clip-path:inset(0 50% 0 0)}
-    .ba .handle{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.5),transparent 40%,transparent 60%,rgba(0,0,0,.5))}
-    .ba input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0}
+    .ba{position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.08);aspect-ratio:16/9;background:#0D0D10;touch-action:pan-y;-webkit-user-select:none;user-select:none}
+    .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+    .ba img.before{clip-path:inset(0 50% 0 0)} /* default 50% */
+    .ba .divider{position:absolute;top:0;bottom:0;width:2px;left:50%;transform:translateX(-1px);background:rgba(255,255,255,.9);box-shadow:0 0 0 1px rgba(0,0,0,.25)}
+    .ba .knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:999px;background:rgba(0,0,0,.38);border:2px solid rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+    .ba .knob::before{content:'\2194';font-size:18px;font-weight:800;opacity:.95}
+    .ba .slider{position:absolute;inset:0;appearance:none;-webkit-appearance:none;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:3}
+    .ba .slider:focus-visible + .access-ring{outline:2px solid var(--primary);outline-offset:4px}
+    /* Piccolo helper per l'accessibilità (invisibile ma presente nel DOM) */
+    .ba .access-ring{position:absolute;inset:0;pointer-events:none}
 
     .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
     .thumbs img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.08)}
+
+    /* Bottoni fallback/toggle (mobile) */
+    .ba-controls{display:flex;gap:8px;justify-content:center;margin-top:8px}
 
     .price{display:flex;align-items:center;gap:10px;justify-content:center;margin:8px 0 2px}
     .price .now{font-size:1.7rem;font-weight:900;color:var(--primary)}
@@ -130,7 +119,7 @@
 
     /* ===================== BENEFITS / REVIEWS / FAQ ===================== */
     .benefits{display:grid;grid-template-columns:1fr;gap:12px;margin:24px 0}
-    .benefit{border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:12px;background:#101014;text-align:center}
+    .benefit{border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px;background:#101014;text-align:center}
     .benefit strong{display:block;margin-bottom:4px}
 
     .reviews{display:grid;grid-template-columns:1fr;gap:12px}
@@ -237,13 +226,19 @@
       <div class="product-grid">
         <!-- Media -->
         <div class="media">
-          <!-- immagini corrette dal repo -->
+          <!-- Slider prima/dopo mobile-first -->
           <div class="ba" aria-label="Prima e dopo – Universal Evolution">
-            <img src="U2.PNG" alt="Dopo" loading="lazy" decoding="async">
-            <div class="handle" aria-hidden="true"></div>
-            <input type="range" min="0" max="100" value="50" aria-label="Regola confronto" />
-            <img class="top" src="U1.PNG" alt="Prima" loading="lazy" decoding="async">
+            <img class="after" src="U2.PNG" alt="Dopo – spoiler universale montato" loading="lazy" decoding="async">
+            <img class="before top" src="U1.PNG" alt="Prima – senza spoiler" loading="lazy" decoding="async">
+            <div class="divider" aria-hidden="true"><span class="knob" role="presentation"></span></div>
+            <input class="slider" type="range" min="0" max="100" value="50" aria-label="Regola confronto prima/dopo" />
+            <span class="access-ring" aria-hidden="true"></span>
           </div>
+          <div class="ba-controls" aria-label="Controlli rapidi prima/dopo">
+            <button class="btn small" data-ba="to" data-value="0" type="button">Prima</button>
+            <button class="btn small" data-ba="to" data-value="100" type="button">Dopo</button>
+          </div>
+
           <div class="thumbs" aria-label="Galleria Universal Evolution">
             <img src="U4.PNG" alt="Dettaglio spoiler universale" loading="lazy" decoding="async">
             <img src="U3.PNG" alt="Vista posteriore montato" loading="lazy" decoding="async">
@@ -274,13 +269,19 @@
       <div class="product-grid">
         <!-- Media -->
         <div class="media">
-          <!-- immagini corrette dal repo -->
+          <!-- Slider prima/dopo mobile-first -->
           <div class="ba" aria-label="Prima e dopo – GEvo1 Giulietta">
-            <img src="G2.jpeg" alt="Dopo" loading="lazy" decoding="async">
-            <div class="handle" aria-hidden="true"></div>
-            <input type="range" min="0" max="100" value="50" aria-label="Regola confronto" />
-            <img class="top" src="G1.jpeg" alt="Prima" loading="lazy" decoding="async">
+            <img class="after" src="G2.jpeg" alt="Dopo – Giulietta con GEvo1 montato" loading="lazy" decoding="async">
+            <img class="before top" src="G1.jpeg" alt="Prima – Giulietta senza spoiler" loading="lazy" decoding="async">
+            <div class="divider" aria-hidden="true"><span class="knob" role="presentation"></span></div>
+            <input class="slider" type="range" min="0" max="100" value="50" aria-label="Regola confronto prima/dopo" />
+            <span class="access-ring" aria-hidden="true"></span>
           </div>
+          <div class="ba-controls" aria-label="Controlli rapidi prima/dopo">
+            <button class="btn small" data-ba="to" data-value="0" type="button">Prima</button>
+            <button class="btn small" data-ba="to" data-value="100" type="button">Dopo</button>
+          </div>
+
           <div class="thumbs" aria-label="Galleria GEvo1">
             <img src="G4.jpeg" alt="Dettaglio GEvo1" loading="lazy" decoding="async">
             <img src="G5.jpeg" alt="Vista laterale GEvo1" loading="lazy" decoding="async">
@@ -405,13 +406,52 @@
       window.addEventListener('load',()=>{document.querySelectorAll('img').forEach(i=>i.style.opacity='1');});
     }
 
-    // Before/After slider logic
-    document.querySelectorAll('.ba').forEach(wrapper=>{
-      const topImg=wrapper.querySelector('.top');
-      const range=wrapper.querySelector('input[type=range]');
-      const update=()=>{const v=range.value; topImg.style.clipPath=`inset(0 ${100-v}% 0 0)`;};
-      range.addEventListener('input',update); update();
-    });
+    // ===================== Slider PRIMA/DOPO – mobile-friendly =====================
+    function initBeforeAfter(wrapper){
+      const before = wrapper.querySelector('img.before');
+      const slider = wrapper.querySelector('input.slider');
+      const divider = wrapper.querySelector('.divider');
+
+      // Ensure starting state
+      const apply = (v)=>{
+        v = Math.max(0, Math.min(100, Number(v)));
+        before.style.clipPath = `inset(0 ${100-v}% 0 0)`;
+        divider.style.left = v + '%';
+        slider.value = v;
+        slider.setAttribute('aria-valuemin','0');
+        slider.setAttribute('aria-valuemax','100');
+        slider.setAttribute('aria-valuenow', String(v));
+        slider.setAttribute('aria-valuetext', v + '%');
+      };
+
+      // Range input support (keyboard + accessibility)
+      slider.addEventListener('input', e => apply(e.target.value));
+
+      // Pointer drag anywhere on the wrapper
+      let dragging = false;
+      const toValue = (clientX)=>{
+        const rect = wrapper.getBoundingClientRect();
+        const x = Math.min(Math.max(clientX - rect.left, 0), rect.width);
+        return Math.round((x / rect.width) * 100);
+      };
+      const onDown = (e)=>{ dragging = true; wrapper.setPointerCapture?.(e.pointerId); apply(toValue(e.clientX)); };
+      const onMove = (e)=>{ if(!dragging) return; e.preventDefault(); apply(toValue(e.clientX)); };
+      const onUp   = (e)=>{ dragging = false; wrapper.releasePointerCapture?.(e.pointerId); };
+      wrapper.addEventListener('pointerdown', onDown);
+      window.addEventListener('pointermove', onMove);
+      window.addEventListener('pointerup', onUp);
+
+      // Fallback buttons (Prima/Dopo)
+      wrapper.parentElement.querySelectorAll('[data-ba="to"]').forEach(btn=>{
+        btn.addEventListener('click',()=> apply(btn.getAttribute('data-value')));
+      });
+
+      // Init
+      apply(slider.value || 50);
+      window.addEventListener('resize', ()=>apply(slider.value || 50));
+    }
+
+    document.querySelectorAll('.ba').forEach(initBeforeAfter);
 
     // Auto-open se hash presente
     if(location.hash.includes('giulietta')) showSection('giulietta');
