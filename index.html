@@ -13,6 +13,10 @@
   <meta property="og:image" content="giulietta_prima.png" />
   <meta property="og:locale" content="it_IT" />
 
+  <!-- Preload delle immagini principali dei due slider (LCP) -->
+  <link rel="preload" as="image" href="U2.PNG" fetchpriority="high">
+  <link rel="preload" as="image" href="giulietta_prima.png" fetchpriority="high">
+
   <link rel="icon" href="favicon.ico" />
   <style>
     /* ===================== TOKENS ===================== */
@@ -228,17 +232,17 @@
         <div class="media">
           <!-- Slider prima/dopo mobile-first -->
           <div class="ba" aria-label="Prima e dopo – Universal Evolution">
-            <img class="after" src="U2.PNG" alt="Dopo – spoiler universale montato" loading="lazy" decoding="async">
-            <img class="before top" src="U1.PNG" alt="Prima – senza spoiler" loading="lazy" decoding="async">
+            <img class="after" src="U2.PNG" alt="Dopo – spoiler universale montato" decoding="async" fetchpriority="high">
+            <img class="before top" src="U1.PNG" alt="Prima – senza spoiler" decoding="async" fetchpriority="high">
             <div class="divider" aria-hidden="true"><span class="knob" role="presentation"></span></div>
             <input class="slider" type="range" min="0" max="100" value="50" aria-label="Regola confronto prima/dopo" />
             <span class="access-ring" aria-hidden="true"></span>
           </div>
 
           <div class="thumbs" aria-label="Galleria Universal Evolution">
-            <img src="U4.PNG" alt="Dettaglio spoiler universale" loading="lazy" decoding="async">
-            <img src="U3.PNG" alt="Vista posteriore montato" loading="lazy" decoding="async">
-            <img src="U2.PNG" alt="Vista dall'alto" loading="lazy" decoding="async">
+            <img data-fade loading="lazy" src="U4.PNG" alt="Dettaglio spoiler universale" decoding="async">
+            <img data-fade loading="lazy" src="U3.PNG" alt="Vista posteriore montato" decoding="async">
+            <img data-fade loading="lazy" src="U2.PNG" alt="Vista dall'alto" decoding="async">
           </div>
         </div>
         <!-- Contenuti -->
@@ -267,8 +271,8 @@
         <div class="media">
           <!-- Slider prima/dopo mobile-first -->
           <div class="ba" aria-label="Prima e dopo – GEvo1 Giulietta">
-            <img class="after" src="giulietta_prima.png" alt="Dopo – Giulietta con GEvo1 montato" loading="lazy" decoding="async">
-            <img class="before top" src="giulietta_dopo.png" alt="Prima – Giulietta senza spoiler" loading="lazy" decoding="async">
+            <img class="after" src="giulietta_prima.png" alt="Dopo – Giulietta con GEvo1 montato" decoding="async" fetchpriority="high">
+            <img class="before top" src="giulietta_dopo.png" alt="Prima – Giulietta senza spoiler" decoding="async" fetchpriority="high">
             <div class="divider" aria-hidden="true"><span class="knob" role="presentation"></span></div>
             <input class="slider" type="range" min="0" max="100" value="50" aria-label="Regola confronto prima/dopo" />
             <span class="access-ring" aria-hidden="true"></span>
@@ -279,9 +283,9 @@
           </div>
 
           <div class="thumbs" aria-label="Galleria GEvo1">
-            <img src="G4.jpeg" alt="Dettaglio GEvo1" loading="lazy" decoding="async">
-            <img src="G5.jpeg" alt="Vista laterale GEvo1" loading="lazy" decoding="async">
-            <img src="G6.JPG" alt="Vista posteriore GEvo1" loading="lazy" decoding="async">
+            <img data-fade loading="lazy" src="G4.jpeg" alt="Dettaglio GEvo1" decoding="async">
+            <img data-fade loading="lazy" src="G5.jpeg" alt="Vista laterale GEvo1" decoding="async">
+            <img data-fade loading="lazy" src="G6.JPG" alt="Vista posteriore GEvo1" decoding="async">
           </div>
         </div>
         <!-- Contenuti -->
@@ -326,6 +330,7 @@
         </ul>
         <p>Prima dell’acquisto verifica larghezza del lunotto e punti di fissaggio. Se hai dubbi, contattaci: ti consigliamo la soluzione migliore per la tua auto.</p>
       </details>
+      <details>
         <summary>Serve forare?</summary>
         <p>Il fissaggio consigliato è con biadesivo automotive e punti di ancoraggio dove possibile. Valuta sempre sicurezza e normative locali.</p>
       </details>
@@ -396,18 +401,42 @@
     // Selector logic
     const select=document.getElementById('carModel');
     const sections={universale:document.getElementById('universale-kit'), giulietta:document.getElementById('giulietta-kit')};
+
+    // Prefetch immagini della sezione scelta
+    const PREFETCHED = new Set();
+    function prefetchSectionImages(key){
+      const s = sections[key];
+      if(!s || PREFETCHED.has(key)) return;
+      s.querySelectorAll('img').forEach(img=>{
+        const src = img.currentSrc || img.src;
+        if(src){
+          const pre = new Image();
+          pre.decoding = 'async';
+          pre.src = src;
+        }
+      });
+      PREFETCHED.add(key);
+    }
+
     function showSection(key){
       Object.values(sections).forEach(s=>{s.setAttribute('aria-hidden','true');});
-      if(sections[key]){sections[key].setAttribute('aria-hidden','false');sections[key].scrollIntoView({behavior:'smooth',block:'start'});}    
+      if(sections[key]){
+        sections[key].setAttribute('aria-hidden','false');
+        sections[key].scrollIntoView({behavior:'smooth',block:'start'});
+      }
       updateStickyCTA(key);
+      prefetchSectionImages(key);
     }
     select.addEventListener('change',e=>showSection(e.target.value));
 
-    // Fade-in images
+    // Fade-in solo per le miniature (niente ritardi sulle immagini principali)
     const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if(!prefersReduced){
-      document.querySelectorAll('img').forEach(img=>{img.style.opacity='0';img.style.transition='opacity .4s ease';img.addEventListener('load',()=>{img.style.opacity='1';});});
-      window.addEventListener('load',()=>{document.querySelectorAll('img').forEach(i=>i.style.opacity='1');});
+      document.querySelectorAll('img[data-fade]').forEach(img=>{
+        img.style.opacity='0';
+        img.style.transition='opacity .25s ease';
+        img.addEventListener('load',()=>{img.style.opacity='1';},{once:true});
+      });
     }
 
     // ===================== Slider PRIMA/DOPO – mobile-friendly =====================
@@ -518,6 +547,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
